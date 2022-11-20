@@ -1,0 +1,60 @@
+.sheet-header
+{
+  .character-art,
+  .logo
+  {
+    max-height: toRem(64px);
+  }
+
+  .logo
+  {
+    border: 0;
+  }
+}
+
+&.sheet
+{
+  .border-bottom
+  {
+    border-bottom: 1px solid $gray-900 !important;
+  }
+}
+
+.health
+{
+  
+}
+
+.actor-item
+{
+  .trait-image
+  {
+    background-color: #fff;
+  }
+
+  .item-equip
+  {
+    &.equipped
+    {
+      color: $item-equipped-color;
+    }
+  }
+}
+
+#inventory
+{
+  margin-bottom: toRem(64px);
+  
+  .equipped-weapon
+  {
+    .weapon-name
+    {
+      text-align: center;
+    }
+
+    label
+    {
+      font-size: 0.8rem;
+    }
+  }
+}

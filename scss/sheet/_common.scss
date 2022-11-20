@@ -1,0 +1,104 @@
+&.sheet
+{
+  & > section
+  {
+    font-size: 14pt;
+  }
+
+  .help
+  {
+    color: $gray-600;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+}
+
+.editor
+{
+  & > [role=application]
+  {
+    min-height: 6.25rem;
+  }
+  
+  & > .editor-content
+  {
+    min-height: 2.5rem;
+  }
+}
+
+input,
+textarea,
+select
+{
+  background-color: transparent;
+  border: 0;
+  font-size: 14pt;
+  padding: 1px 0;
+
+  &:hover,
+  &:focus
+  {
+    padding: 1px 3px;
+    background-color: $input-focus-background;
+    border: 1px solid $input-focus-border;
+  }
+}
+
+.hidden
+{
+  visibility: hidden;
+  display: none;
+}
+
+textarea
+{
+  resize: none;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+  border-bottom: 0;
+}
+
+.section-header
+{
+  background-color: $h1-background;
+  color: $h1-text;
+
+  h1
+  {
+    @extend h1;
+    font-size: 1.2rem;
+  }
+
+  .item-add
+  {
+    line-height: 2rem;
+  }
+}
+
+.actor-items
+{
+  list-style: none;
+
+  & > .actor-item
+  {
+    list-style-type: none;
+    border-bottom: 1px solid $gray-400;
+    margin-bottom: 0.5rem;
+
+    &:last-child
+    {
+      border-bottom: 0;
+    }
+  }
+}
+
+.character
+{
+  .property
+  {
+    @extend .health !optional;
+    margin: toRem(8px) 0;
+  }
+}

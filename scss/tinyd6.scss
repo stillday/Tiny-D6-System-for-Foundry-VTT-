@@ -1,0 +1,32 @@
+/** Facilitate a bootstrap grid */
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../node_modules/bootstrap/scss/utilities";
+
+@import "common/functions";
+@import "common/variables";
+@import "common/mixins";
+@import "fonts";
+
+body 
+{
+  .die-roller:first-child
+  {
+    top: 0px !important;
+    left:0px !important;
+    width:100% !important;
+  }
+}
+
+.tinyd6
+{
+  @import "partial/trait-block";
+  @import "partial/test-result";
+
+  @import "sheet/common";
+  @import "sheet/npc";
+  @import "sheet/hero";
+  @import "application/die-roller";
+}
+
+@import "theme/tiny-cthulhu";

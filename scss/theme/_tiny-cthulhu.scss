@@ -1,0 +1,24 @@
+.tiny-cthulhu
+{
+  @extend .arno-pro;
+
+  &.sheet
+  {
+    @import "tiny-cthulhu/window-content";
+  }
+
+  @import "tiny-cthulhu/headings";
+  @import "tiny-cthulhu/hero-sheet";
+  @import "tiny-cthulhu/npc-sheet";
+  @import "tiny-cthulhu/die-roller";
+
+  .experience
+  {
+    @import "../partial/label_tabs";
+  }
+
+  .window-content
+  {
+    @extend .tiny-cthulhu.sheet;
+  }
+}

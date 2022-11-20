@@ -1,0 +1,199 @@
+{
+  "tinyd6": {
+    "TinyD6HeroSheet": "Hero",
+    "TinyD6NpcSheet": "NPC",
+    "system": {
+      "name": "Tiny D6 2e",
+      "dieRoller": "Die Roller"
+    },
+    "settings": {
+      "title": "System Settings",
+      "label": "System Settings",
+      "description": "Choose the optional rules and mechanics you would like to enable from the options below.",
+      "theme": {
+        "name": "Theme",
+        "hint": "Set this to theme your world for a specific Tiny D6 game",
+        "choices": {
+          "cthulhu": "Tiny Cthulhu",
+          "dungeon": "Tiny Dungeon 2e"
+        }
+      },
+      "enableCorruption": {
+        "name": "Enable Corruption Track",
+        "hint": "Add a track to the character sheet for Corruption."
+      },
+      "enableAdvancement": {
+        "name": "Character Advancement",
+        "hint": "Characters progress either based on a number of sessions or by awarding experience points",
+        "choices": {
+          "none": "None",
+          "minimalist": "Minimalist Advancement",
+          "xp": "Experience Points"
+        }
+      },
+      "enableItemTracking": {
+        "name": "Enable Item Tracking",
+        "hint": "Show slot use for items and calculate remaining inventory slots."
+      },
+      "enableDepletionPoints": {
+        "name": "Enable Item Expenditure/Depletion",
+        "hint": "When item uses depletion points, track them for character items."
+      },
+      "enableCriticalHits": {
+        "name": "Enable Critical Hits",
+        "hint": "Mark Test as 'Critical Success' when all dice ore 5 or 6."
+      },
+      "enableVariableWeaponDamage": {
+        "name": "Variable Weapon Damage",
+        "hint": "Calculate variable weapon damage for attack tests."
+      },
+      "enableDamageReduction": {
+        "name": "Enable Damage Reduction",
+        "hint": "Armor provides a static damage reduction rating when equipped."
+      }
+    },
+    "dice": {
+      "modifier": {
+        "focus": "Focus",
+        "marksman": "Marksman"
+      },
+      "roll": {
+        "disadvantage": "Disadvantage",
+        "standard": "Standard Test",
+        "advantage": "Advantage"
+      }
+    },
+    "sheet": {
+      "newItem": "New Item",
+      "description": "Description",
+      "none": "None"
+    },
+    "actor": {
+      "name": "Name",
+      "npc": "NPC",
+      "people": "People",
+      "traits": "Traits",
+      "description": "Description",
+      "tiny-cthulhu": {
+        "character": "Bio",
+        "heritage": {
+          "header": "Archetype",
+          "traits": "Archetype Trait",
+          "delete": "Remove Archetype"
+        }
+      },
+      "tiny-dungeon": {
+        "character": "Character",
+        "heritage": {
+          "header": "Heritage",
+          "traits": "Heritage Trait",
+          "delete": "Remove Heritage"
+        }
+      },
+      "homeland": "Homeland",
+      "age": "Age",
+      "eyes": "Eyes",
+      "hair": "Hair",
+      "familyTrade": "Family Trade",
+      "belief": "Belief",
+      "xp": {
+        "header": "Experience",
+        "progression": "Progression",
+        "total": "Total",
+        "spent": "Spent",
+        "remaining": "Remaining"
+      },
+      "wounds": {
+        "header": "Health",
+        "current": "Current",
+        "max": "Max:",
+        "increaseMax": "Increment Max HP",
+        "help": "Check a box when you suffer damage. Uncheck when healed."
+      },
+      "corruption": {
+        "test": "Corruption Test",
+        "header": "Corruption",
+        "current": "Current",
+        "max": "Max:",
+        "increaseMax": "Increment Corruption Threshold",
+        "help": "Check a box when you suffer corruption. Uncheck if recovered."
+      },
+      "proficiencies": {
+        "header": "Proficiency",
+        "mastered": "Mastery"
+      },
+      "gear": "Inventory",
+      "equipped": "Equipped",
+      "weaponry": "Weaponry",
+      "wearing": "Wearing",
+      "actions": {
+        "editTrait": "Edit Trait",
+        "deleteTrait": "Remove Trait"
+      }
+    },
+    "weaponCategories":
+    {
+      "melee": "Melee",
+      "ranged": "Ranged"
+    },
+    "weaponTypes": {
+      "none": "",
+      "light": "Light",
+      "heavy": "Heavy"
+    },
+    "armorTypes": {
+      "none": "",
+      "light": "Light",
+      "medium": "Medium",
+      "heavy": "Heavy"
+    },
+    "corruptionTests": {
+      "none": "None",
+      "disadvantage": "Disadvantage",
+      "standard": "Standard"
+    },
+    "weapon": {
+      "name": "Name",
+      "type": "Weapon Type",
+      "damage": "Damage",
+      "slots": "Item Slots",
+      "description": "Description",
+      "light": "Light",
+      "heavy": "Heavy",
+      "ranged": "Ranged",
+      "lightMelee": "L. Melee",
+      "heavyMelee": "H. Melee",
+      "lightRanged": "L. Ranged",
+      "heavyRanged": "H. Ranged",
+      "lightShort": "L",
+      "heavyShort": "H",
+      "meleeShort": "M",
+      "rangedShort": "R"
+    },
+    "armor": {
+      "name": "Name",
+      "type": "Armor Type",
+      "damageReduction": "DR",
+      "slots": "Item Slots",
+      "depletion": "Depletion",
+      "description": "Description",
+      "none": "No Armor"
+    },
+    "gear": {
+      "name": "Name",
+      "slots": "Item Slots",
+      "depletion": "Depletion",
+      "quantity": "Quantity",
+      "description": "Description"
+    },
+    "heritage": {
+      "trait": "Heritage Trait",
+      "startingHealth": "Starting HP",
+      "corruptionThreshold": "Corruption Threshold"
+    },
+    "trait": {
+      "name": "Name",
+      "description": "Description"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<form class="{{cssClass}}" autocomplete="off">
+    {{> "systems/tinyd6/templates/partials/item-header.hbs" placeholder='tinyd6.armor.name'}}
+    <table>
+        <tr>
+            <th class="text-nowrap">{{localize 'tinyd6.armor.type'}}</th>
+            <th class="text-nowrap">{{localize 'tinyd6.armor.damageReduction'}}</th>
+            <th class="text-nowrap">{{localize 'tinyd6.armor.slots'}}</th>
+        </tr>
+        <tr>
+            <td>
+                <select name="data.group">
+                    {{#select data.data.group}}
+                        {{#each config.armorTypes as |name type|}}
+                            <option value="{{type}}">{{localize name}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+            <td>
+                <input type="text" class="text-center" name="data.damageReduction" value="{{data.data.damageReduction}}" data-dtype="Number"/>
+            </td>
+            <td>
+                <input type="text" class="text-center" name="data.slots" value="{{data.data.slots}}" data-dtype="Number"/>
+            </td>
+        </tr>
+    </table>
+    {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
+</form>

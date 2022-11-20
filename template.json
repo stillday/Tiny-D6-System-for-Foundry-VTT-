@@ -1,0 +1,110 @@
+{
+  "Actor": {
+    "types": [
+      "hero",
+      "npc"
+    ],
+    "templates": {
+      "commonStats": {
+        "name": "",
+        "wounds": {
+          "value": 12,
+          "max": 12
+        },
+        "traits": {},
+        "description": ""
+      },
+      "causesCorruption": {
+        "corruptionTest": "standard"
+      },
+      "namedCharacter": {
+        "heritage": {},
+        "people": "",
+        "homeland": "",
+        "age": "",
+        "eyes": "",
+        "hair": "",
+        "familyTrade": "",
+        "belief": "",
+        "xp": {
+          "max": 0,
+          "spent": 0
+        },
+        "advancement":{
+          "value": 0,
+          "max": 3
+        },
+        "proficiencies": {
+          "lightMelee": false,
+          "heavyMelee": false,
+          "lightRanged": false,
+          "heavyRanged": false,
+          "masteredWeapons": ""
+        },
+        "gear": {}
+      },
+      "hero": {
+        "corruptionThreshold": {
+          "value": 6,
+          "max": 6
+        }
+      }
+    },
+    "hero": {
+      "templates": [ "commonStats", "namedCharacter", "hero" ]
+    },
+    "npc": {
+      "templates": [ "commonStats", "causesCorruption" ]
+    }
+  },
+  "Item": {
+    "types": [
+      "weapon",
+      "armor",
+      "gear",
+      "heritage",
+      "trait"
+    ],
+    "templates": {
+      "itemDescription": {
+        "description": ""
+      },
+      "slots": {
+        "value": 1
+      },
+      "depletion": {
+        "value": 0
+      },
+      "quantity": {
+        "value": 0
+      },
+      "proficiencyGroup": {
+        "damageType": "",
+        "group": ""
+      },
+      "equipment": {
+        "equipped": false
+      }
+    },
+    "weapon": {
+      "templates": [ "slots", "itemDescription", "proficiencyGroup", "equipment" ],
+      "damage": 1
+    },
+    "armor": {
+      "templates": [ "slots", "itemDescription", "depletion", "proficiencyGroup", "equipment" ],
+      "damageReduction": 1
+    },
+    "gear": {
+      "templates": [ "slots", "itemDescription", "depletion", "quantity" ]
+    },
+    "heritage": {
+      "templates": [ "itemDescription" ],
+      "trait": "",
+      "startingHealth": 6,
+      "corruptionThreshold": 6
+    },
+    "trait": {
+      "templates": [ "itemDescription" ]
+    }
+  }
+}
