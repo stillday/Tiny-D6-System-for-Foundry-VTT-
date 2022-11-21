@@ -19,6 +19,6 @@
 
   .window-content
   {
-    @extend .tiny-cthulhu.sheet;
+    @extend .tiny-cthulhu, .sheet;
   }
 }

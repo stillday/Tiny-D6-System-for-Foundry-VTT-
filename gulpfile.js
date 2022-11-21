@@ -2,7 +2,7 @@ const { series, parallel, src, dest, watch } = require('gulp');
 
 const concat = require('gulp-concat');
 const nano = require('gulp-clean-css');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 
 const paths = {
     css: [ "scss/tinyd6.scss" ]
