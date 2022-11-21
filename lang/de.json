@@ -1,0 +1,199 @@
+{
+  "tinyd6": {
+    "TinyD6HeroSheet": "Character",
+    "TinyD6NpcSheet": "NPC",
+    "system": {
+      "name": "Tiny D6 2e",
+      "dieRoller": "Die Roller"
+    },
+    "settings": {
+      "title": "Systemeinstellungen",
+      "label": "Systemeinstellungen",
+      "description": "Wähle die optionalen Regeln aus den Optionen aus, die Du aktivieren möchtest.",
+      "theme": {
+        "name": "Theme",
+        "hint": "Auswahl des Themes, um Deine Welt für ein bestimmtes Tiny D6-Spiel anzupassen.",
+        "choices": {
+          "cthulhu": "Tiny Cthulhu",
+          "dungeon": "Tiny Dungeon 2e"
+        }
+      },
+      "enableCorruption": {
+        "name": "Korruptionsleiste aktivieren",
+        "hint": "Fügt auf dem Charakterbogen eine  Leiste für Korruption hinzu."
+      },
+      "enableAdvancement": {
+        "name": "Charakterentwicklung",
+        "hint": "Die Charakterentwicklung basiert entweder auf der Anzahl der Sitzungen oder auf der Vergabe von Erfahrungspunkten",
+        "choices": {
+          "none": "Keine",
+          "minimalist": "minimalistischen Charakterentwicklung",
+          "xp": "Erfahrungspunkte"
+        }
+      },
+      "enableItemTracking": {
+        "name": "Inventarverwaltung verwenden",
+        "hint": "Fügt auf dem Charakterbogen Inventarfelder für Ausrüstung hinzu."
+      },
+      "enableDepletionPoints": {
+        "name": "Verschleißpunkte",
+        "hint": "Notiert die Verschleißpunkte von Ausrüstung auf dem Charakterbogen."
+      },
+      "enableCriticalHits": {
+        "name": "Enable Critical Hits",
+        "hint": "Mark Test as 'Critical Success' when all dice ore 5 or 6."
+      },
+      "enableVariableWeaponDamage": {
+        "name": "Variable Weapon Damage",
+        "hint": "Calculate variable weapon damage for attack tests."
+      },
+      "enableDamageReduction": {
+        "name": "Schadensminderung",
+        "hint": "Wenn Rüstung getragen wird, reduziert sie den Schaden um einen festen Wert."
+      }
+    },
+    "dice": {
+      "modifier": {
+        "focus": "Konzentration",
+        "marksman": "Scharfschütze"
+      },
+      "roll": {
+        "disadvantage": "Nachteil",
+        "standard": "Standardprobe",
+        "advantage": "Vorteil"
+      }
+    },
+    "sheet": {
+      "newItem": "Neuer Gegenstand",
+      "description": "Beschreibung",
+      "none": "Keine"
+    },
+    "actor": {
+      "name": "Name",
+      "npc": "NPC",
+      "people": "Volk",
+      "traits": "Merkmale",
+      "description": "Beschreibung",
+      "tiny-cthulhu": {
+        "character": "Bio",
+        "heritage": {
+          "header": "Archetyp",
+          "traits": "Merkmale des Archetyp",
+          "delete": "Archetyp entfernen"
+        }
+      },
+      "tiny-dungeon": {
+        "character": "Character",
+        "heritage": {
+          "header": "Vermächtnis",
+          "traits": "Merkmale des Vermächtnis",
+          "delete": "Vermächtnis entfernen"
+        }
+      },
+      "homeland": "Heimat",
+      "age": "Alter",
+      "eyes": "Augen",
+      "hair": "Haare",
+      "familyTrade": "Ausbildung",
+      "belief": "Überzeugung",
+      "xp": {
+        "header": "Erfahrung",
+        "progression": "Fortschritt",
+        "total": "Total",
+        "spent": "Ausgegeben",
+        "remaining": "Verbleibend"
+      },
+      "wounds": {
+        "header": "Trefferpunkte",
+        "current": "Aktuell",
+        "max": "Max:",
+        "increaseMax": "Max TP erhöhen",
+        "help": "Markiere ein Kästchen, wenn du Schaden erleidest. Entferne das Häkchen, wenn Du geheilt wirst."
+      },
+      "corruption": {
+        "test": "Korruptionsprobe",
+        "header": "Korruption",
+        "current": "Aktuell",
+        "max": "Max:",
+        "increaseMax": "Schwellenwert für Korruption erhöhen",
+        "help": "Markiere ein Kästchen, wenn Du Korruption erhältst. Entferne das Häkchen, wenn Du Dich erholst wirst."
+      },
+      "proficiencies": {
+        "header": "Qualification",
+        "mastered": "Gemeistert"
+      },
+      "gear": "Inventar",
+      "equipped": "Ausgerüstet",
+      "weaponry": "Bewaffnung",
+      "wearing": "getragen",
+      "actions": {
+        "editTrait": "Merkmal bearbeiten",
+        "deleteTrait": "Merkmal entfernen"
+      }
+    },
+    "weaponCategories":
+    {
+      "melee": "Nahkampf",
+      "ranged": "Fernkampf"
+    },
+    "weaponTypes": {
+      "none": "",
+      "light": "Leicht",
+      "heavy": "Schwer"
+    },
+    "armorTypes": {
+      "none": "",
+      "light": "Leicht",
+      "medium": "Mittlere",
+      "heavy": "Schwer"
+    },
+    "corruptionTests": {
+      "none": "Keinen",
+      "disadvantage": "Nachteil",
+      "standard": "Normal"
+    },
+    "weapon": {
+      "name": "Name",
+      "type": "Waffenart",
+      "damage": "Schaden",
+      "slots": "Ausrüstungsslots",
+      "description": "Beschreibung",
+      "light": "Leicht",
+      "heavy": "Schwer",
+      "ranged": "Fernkampf",
+      "lightMelee": "L. Nahkampf",
+      "heavyMelee": "S. Nahkampf",
+      "lightRanged": "L. Fernkampf",
+      "heavyRanged": "S. Fernkampf",
+      "lightShort": "L",
+      "heavyShort": "S",
+      "meleeShort": "N",
+      "rangedShort": "F"
+    },
+    "armor": {
+      "name": "Name",
+      "type": "Rüstungsart",
+      "damageReduction": "SM",
+      "slots": "Ausrüstungsslots",
+      "depletion": "Verschleißpunkte",
+      "description": "Beschreibung",
+      "none": "Ungerüstet"
+    },
+    "gear": {
+      "name": "Name",
+      "slots": "Ausrüstungsslots",
+      "depletion": "Verschleißpunkte",
+      "quantity": "Quantität",
+      "description": "Beschreibung"
+    },
+    "heritage": {
+      "trait": "Vermächtnismerkmal",
+      "startingHealth": "Anfangs Trefferpunkte",
+      "corruptionThreshold": "Korruptionsschwelle"
+    },
+    "trait": {
+      "name": "Name",
+      "description": "Beschreibung"
+    }
+  }
+}
