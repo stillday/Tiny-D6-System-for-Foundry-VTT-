@@ -13,11 +13,11 @@ export default class TinyD6HeroSheet extends TinyD6ActorSheet {
     getData() {
         const data = super.getData();
 
-        data.data.data.heritage = data.data.items.filter(item => { return item.type === "heritage" })[0];
-        data.data.data.xp.remaining = data.data.data.xp.max - data.data.data.xp.spent;
+        data.data.system.heritage = data.data.items.filter(item => { return item.type === "heritage" })[0];
+        data.data.system.xp.remaining = data.data.system.xp.max - data.data.system.xp.spent;
 
-        data.data.data.armorTotal = 0;
-        data.data.data.armor.forEach((item, n) => {
+        data.data.system.armorTotal = 0;
+        data.data.system.armor.forEach((item, n) => {
             data.data.data.armorTotal += item.data.damageReduction;
         });
         
@@ -55,7 +55,7 @@ export default class TinyD6HeroSheet extends TinyD6ActorSheet {
         event.preventDefault();
 
         const element = event.currentTarget;
-        const currentCorruption = parseInt(this.actor.data.data.corruptionThreshold.value ?? 0);
+        const currentCorruption = parseInt(this.actor.system.data.corruptionThreshold.value ?? 0);
         if (element.checked)
         {
             this.actor.update({
@@ -70,7 +70,7 @@ export default class TinyD6HeroSheet extends TinyD6ActorSheet {
         else if (currentCorruption > 0)
         {
             this.actor.update({
-                _id: this.actor.data._id,
+                _id: this.actor.system._id,
                 data: {
                     corruptionThreshold: {
                         value: (currentCorruption - 1)
@@ -85,11 +85,11 @@ export default class TinyD6HeroSheet extends TinyD6ActorSheet {
         event.preventDefault();
 
         const element = event.currentTarget;
-        const currentProgress = parseInt(this.actor.data.data.advancement.value ?? 0);
+        const currentProgress = parseInt(this.actor.system.data.advancement.value ?? 0);
         if (element.checked)
         {
             this.actor.update({
-                _id: this.actor.data._id,
+                _id: this.actor.system._id,
                 data: {
                     advancement: {
                         value: (currentProgress + 1)
@@ -100,7 +100,7 @@ export default class TinyD6HeroSheet extends TinyD6ActorSheet {
         else if (currentProgress > 0)
         {
             this.actor.update({
-                _id: this.actor.data._id,
+                _id: this.actor.system._id,
                 data: {
                     advancement: {
                         value: (currentProgress - 1)

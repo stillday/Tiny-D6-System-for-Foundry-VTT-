@@ -92,8 +92,8 @@ Hooks.on("createItem", (item, temporary) => {
 
     if (item.type === "heritage")
     {
-        item.actor.data.update({
-            _id: item.actor.data._id,
+        item.actor.system.update({
+            _id: item.actor.system._id,
             data: {
                 wounds: {
                     value: item.data.data.startingHealth,
