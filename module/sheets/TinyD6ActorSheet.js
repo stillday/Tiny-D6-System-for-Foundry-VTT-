@@ -17,16 +17,16 @@ export default class TinyD6ActorSheet extends ActorSheet {
         
         data.data.system.owner = this.actor.isOwner;
         data.data.system.traits = data.data.items.filter(item => { return item.type === "trait" });
-        data.data.system.weapons = data.data.items.filter(item => { return item.type === "weapon" && item.data.equipped });
-        data.data.system.armor = data.data.items.filter(item => { return item.type === "armor" && item.data.equipped });
+        data.data.system.weapons = data.data.items.filter(item => { return item.type === "weapon" && item.system.equipped });
+        data.data.system.armor = data.data.items.filter(item => { return item.type === "armor" && item.system.equipped });
         data.data.system.gear = data.data.items.filter(item => { return item.type !== "trait" && item.type !== "heritage" });
-
+        console.log('data', data)
+        console.log('titem', item.system)
         return data;
     }
 
     activateListeners(html)
     {
-        console.log('data', data)
         console.log("tinyd6 | activating listeners");
         console.log("tinyd6 | html", html.find(".roll-dice"));
 
@@ -175,7 +175,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
         return {
             _id: id,
             data: {
-                equipped: !item.data.data.equipped,
+                equipped: !item.system.data.equipped,
             },
         };
     }

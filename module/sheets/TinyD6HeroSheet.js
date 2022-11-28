@@ -18,7 +18,7 @@ export default class TinyD6HeroSheet extends TinyD6ActorSheet {
 
         data.data.system.armorTotal = 0;
         data.data.system.armor.forEach((item, n) => {
-            data.data.data.armorTotal += item.data.damageReduction;
+            data.data.system.armorTotal += item.system.damageReduction;
         });
         
         return data;

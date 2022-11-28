@@ -96,12 +96,12 @@ Hooks.on("createItem", (item, temporary) => {
             _id: item.actor.system._id,
             data: {
                 wounds: {
-                    value: item.data.data.startingHealth,
-                    max: item.data.data.startingHealth
+                    value: item.systen.data.startingHealth,
+                    max: item.system.data.startingHealth
                 },
                 corruptionThreshold: {
                     value: 0,
-                    max: item.data.data.corruptionThreshold
+                    max: item.system.data.corruptionThreshold
                 }
             }
         });
