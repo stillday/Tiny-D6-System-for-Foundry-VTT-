@@ -39,9 +39,8 @@ export default class DieRoller extends FormApplication {
     }
 
     getPos() {
-        console.log("tinyd6 | getting position");
-        this.pos = game.user.getFlag(TinyD6System.SYSTEM, "dieRollerPosition");
-
+        //console.log("tinyd6 | getting position");
+        this.pos = game.user.getFlag(TinyD6System.SYSTEM, "dieRollerPosition") || 0;
         if ((this.pos === null) || (this.pos.length === 0)) {
             let hbpos = $('#hotbar').position();
             let width = $('#hotbar').width();
@@ -64,7 +63,6 @@ export default class DieRoller extends FormApplication {
 
     setPos() {
         console.log("tinyd6 | setting position", this.pos);
-
         let cssPosition = this.getPos();
         let position = this.pos;
         // if ((position === null) || (position.length === 0)) {
