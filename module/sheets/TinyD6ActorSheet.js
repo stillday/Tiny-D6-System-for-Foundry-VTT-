@@ -21,7 +21,6 @@ export default class TinyD6ActorSheet extends ActorSheet {
         data.data.system.armor = data.data.items.filter(item => { return item.type === "armor" && item.system.equipped });
         data.data.system.gear = data.data.items.filter(item => { return item.type !== "trait" && item.type !== "heritage" });
         console.log('data', data)
-        console.log('titem', item.system)
         return data;
     }
 
@@ -43,6 +42,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
     }
 
     activateEditor(name, options={}, initialContent="") {
+        console.log('name', name);
         const editor = this.editors[name];
         if ( !editor ) throw new Error(`${name} is not a registered editor name!`);
         options = mergeObject(editor.options, options);
@@ -62,6 +62,8 @@ export default class TinyD6ActorSheet extends ActorSheet {
      * @private
      */
     _activateEditor(div) {
+
+        console.log('div', div)
         // Get the editor content div
         const name = div.getAttribute("data-edit");
         const button = div.nextElementSibling;
@@ -185,7 +187,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
         event.preventDefault();
 
         const element = event.currentTarget;
-        const currentDamage = parseInt(this.actor.system.data.wounds.value ?? 0);
+        const currentDamage = parseInt(this.actor.data.system.wounds.value ?? 0);
         console.log('ccc', currentDamage);
         if (element.checked)
         {
