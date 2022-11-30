@@ -42,8 +42,11 @@ export default class TinyD6ActorSheet extends ActorSheet {
     }
 
     activateEditor(name, options={}, initialContent="") {
-        console.log('name', name);
+        console.log('my NAME', name);
+        console.log('EEE', this.editors)
         const editor = this.editors[name];
+        console.log('I love Editor', editor)
+        console.log('wer', editor.initial)
         if ( !editor ) throw new Error(`${name} is not a registered editor name!`);
         options = mergeObject(editor.options, options);
         options.height = options.target.offsetHeight;
@@ -62,15 +65,12 @@ export default class TinyD6ActorSheet extends ActorSheet {
      * @private
      */
     _activateEditor(div) {
-
-        console.log('div', div)
         // Get the editor content div
         const name = div.getAttribute("data-edit");
-        const button = div.nextElementSibling;
+        const button = div.previousSibling;
         const hasButton = button && button.classList.contains("editor-edit");
         const wrap = div.parentElement.parentElement;
         const wc = $(div).parents(".window-content")[0];
-
         // Determine the preferred editor height
         const heights = [wrap.offsetHeight, wc ? wc.offsetHeight : null];
         if ( div.offsetHeight > 0 ) heights.push(div.offsetHeight);

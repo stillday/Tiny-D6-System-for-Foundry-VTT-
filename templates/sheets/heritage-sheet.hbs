@@ -2,7 +2,7 @@
     {{> "systems/tinyd6/templates/partials/item-header.hbs" placeholder='tinyd6.trait.name'}}
     <div class="d-flex">
         <label class="text-nowrap mr-2">{{localize "tinyd6.heritage.startingHealth"}}</label>
-        <input name="data.startingHealth" type="text" value="{{data.data.startingHealth}}" placeholder="{{localize "tinyd6.heritage.startingHealth"}}" dType="Number"/>
+        <input name="data.startingHealth" type="text" value="{{data.system.startingHealth}}" placeholder="{{localize "tinyd6.heritage.startingHealth"}}" dType="Number"/>
         <label class="text-nowrap mx-2">{{localize "tinyd6.heritage.corruptionThreshold"}}</label>
         <input name="system.corruptionThreshold" type="text" value="{{data.system.corruptionThreshold}}" placeholder="{{localize "tinyd6.heritage.corruptionThreshold"}}" dType="Number"/>
     </div>

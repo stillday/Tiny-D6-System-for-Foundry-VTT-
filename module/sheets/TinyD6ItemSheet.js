@@ -50,7 +50,7 @@ export default class TinyD6ItemSheet extends ItemSheet {
     _activateEditor(div) {
         // Get the editor content div
         const name = div.getAttribute("data-edit");
-        const button = div.nextElementSibling;
+        const button = div.previousSibling;
         const hasButton = button && button.classList.contains("editor-edit");
         const wrap = div.parentElement.parentElement;
         const wc = $(div).parents(".window-content")[0];

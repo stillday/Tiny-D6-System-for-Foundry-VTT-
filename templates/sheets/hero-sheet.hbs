@@ -39,7 +39,12 @@
         <div class="stat-values">
             <div class="description property">
                 <label class="border-bottom"><span>{{localize "tinyd6.actor.description"}}</span></label>
-                {{editor content=data.system.description target="system.description" button=true owner=owner editable=editable}}
+                {{editor 
+                    data.system.description 
+                    target="system.description" 
+                    button=true 
+                    editable=editable
+                }}
             </div>
         </div>
     </section>
