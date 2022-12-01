@@ -19,7 +19,10 @@ export default class TinyD6ActorSheet extends ActorSheet {
         data.data.system.traits = data.data.items.filter(item => { return item.type === "trait" });
         data.data.system.weapons = data.data.items.filter(item => { return item.type === "weapon" && item.system.equipped });
         data.data.system.armor = data.data.items.filter(item => { return item.type === "armor" && item.system.equipped });
-        data.data.system.gear = data.data.items.filter(item => { return item.type !== "trait" && item.type !== "heritage" });
+        data.data.system.gear = data.data.items.filter(item => { return item.type !== "trait" && item.type !== "heritage" });  
+
+        data.enrichedDescription = TextEditor.enrichHTML(this.object.system.description.value, {async: true});
+
         console.log('data', data)
         return data;
     }
@@ -42,7 +45,6 @@ export default class TinyD6ActorSheet extends ActorSheet {
     }
 
     activateEditor(name, options={}, initialContent="") {
-        console.log('my NAME', name);
         console.log('EEE', this.editors)
         const editor = this.editors[name];
         console.log('I love Editor', editor)
@@ -67,6 +69,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
     _activateEditor(div) {
         // Get the editor content div
         const name = div.getAttribute("data-edit");
+        console.log('this NAME', name)
         const button = div.previousSibling;
         const hasButton = button && button.classList.contains("editor-edit");
         const wrap = div.parentElement.parentElement;
@@ -80,6 +83,9 @@ export default class TinyD6ActorSheet extends ActorSheet {
         const initialContent = getProperty(this.object.system, name);
         //console.log("tinyd6 | name: ", name);
         //console.log("tinyd6 | initialContent:", initialContent);
+        console.log('save name', name)
+        console.log('acitve save', this.saveEditor(name))
+        console.log('is run', editor)
         const editorOptions = {
             target: div,
             height: height,

@@ -40,7 +40,7 @@
             <div class="description property">
                 <label class="border-bottom"><span>{{localize "tinyd6.actor.description"}}</span></label>
                 {{editor 
-                    data.system.description 
+                    enrichedDescription 
                     target="system.description" 
                     button=true 
                     editable=editable
@@ -57,7 +57,7 @@
                     <span class="d-flex justify-content-end ml-auto">
                         <span class="mr-2">{{localize "tinyd6.actor.wounds.max"}}</span>
                         {{#if owner}}
-                            <input name="data.wounds.max" type="text" class="mx-2" style="width: 10%;" value="{{data.system.wounds.max}}" dType="Number"/>
+                            <input name="system.wounds.max" type="text" class="mx-2" style="width: 10%;" value="{{data.system.wounds.max}}" dType="Number"/>
                         {{^}}
                             <span>{{data.system.wounds.max}}</span>
                         {{/if}}
@@ -79,15 +79,15 @@
                         <span class="d-flex justify-content-end ml-auto">
                         <span class="mr-2">{{localize "tinyd6.actor.corruption.max"}}</span>
                             {{#if owner}}
-                                <input name="data.corruptionThreshold.max" type="text" class="mx-2" style="width: 10%;" value="{{data.data.corruptionThreshold.max}}" dType="Number"/>
+                                <input name="data.corruptionThreshold.max" type="text" class="mx-2" style="width: 10%;" value="{{data.system.corruptionThreshold.max}}" dType="Number"/>
                             {{^}}
-                                <span>{{data.data.corruptionThreshold.max}}</span>
+                                <span>{{data.system.corruptionThreshold.max}}</span>
                             {{/if}}
                     </span>
                     </div>
                     <div class="corruption-meter">
                         {{#times data.data.corruptionThreshold.max}}
-                            <input type="checkbox" value="1" class="corruption-box d-inline-block" {{#if (lt . ../data.data.corruptionThreshold.value)}}checked{{/if}} />
+                            <input type="checkbox" value="1" class="corruption-box d-inline-block" {{#if (lt . ../data.system.corruptionThreshold.value)}}checked{{/if}} />
                         {{/times}}
                     </div>
                     {{#if owner}}
@@ -101,16 +101,16 @@
                         <h3 class="section-header">{{localize "tinyd6.actor.xp.header"}}</h3>
                         <div class="stat-values property d-flex justify-content-between border-bottom">
                             <label class="mr-2"><span>{{localize "tinyd6.actor.xp.total"}}</span></label>
-                            <input name="data.xp.max" class="text-right" type="text" value="{{data.data.xp.max}}" placeholder="{{localize "tinyd6.actor.xp.total"}}" dType="Number"/>
+                            <input name="system.xp.max" class="text-right" type="text" value="{{data.system.xp.max}}" placeholder="{{localize "tinyd6.actor.xp.total"}}" dType="Number"/>
                         </div>
                         <div class="stat-values property d-flex justify-content-between border-bottom">
                             <label class="mr-2"><span>{{localize "tinyd6.actor.xp.spent"}}</span></label>
-                            <input name="data.xp.spent" class="text-right" type="text" value="{{data.data.xp.spent}}" placeholder="{{localize "tinyd6.actor.xp.spent"}}" dType="Number"/>
+                            <input name="system.xp.spent" class="text-right" type="text" value="{{data.system.xp.spent}}" placeholder="{{localize "tinyd6.actor.xp.spent"}}" dType="Number"/>
                         </div>
                         <div class="stat-values property d-flex justify-content-between border-bottom">
                             <label class="mr-2"><span>{{localize "tinyd6.actor.xp.remaining"}}</span></label>
                             <span class="d-block">
-                                {{data.data.xp.remaining}}
+                                {{data.system.xp.remaining}}
                             </span>
                         </div>
                     </section>
@@ -121,8 +121,8 @@
                     <section class="experience d-flex flex-column justify-content-between">
                         <h3 class="section-header">{{localize "tinyd6.actor.xp.progression"}}</h3>
                         <div class="d-flex">
-                            {{#times data.data.advancement.max}}
-                                <input type="checkbox" value="1" class="advancement-progress-box d-inline-block" {{#if (lt . ../data.data.advancement.value)}}checked{{/if}} />
+                            {{#times data.system.advancement.max}}
+                                <input type="checkbox" value="1" class="advancement-progress-box d-inline-block" {{#if (lt . ../data.system.advancement.value)}}checked{{/if}} />
                             {{/times}}
                         </div>
                     </section>
@@ -136,25 +136,25 @@
         <div class="d-flex justify-content-start">
             <div class="light mr-4">
                 <label>
-                    <input type="checkbox" name="data.proficiencies.lightMelee" {{checked data.data.proficiencies.lightMelee}}/>
+                    <input type="checkbox" name="system.proficiencies.lightMelee" {{checked data.system.proficiencies.lightMelee}}/>
                     {{localize "tinyd6.weapon.lightMelee"}}
                 </label>
             </div>
             <div class="heavy mr-4">
                 <label>
-                    <input type="checkbox" name="data.proficiencies.heavyMelee" {{checked data.data.proficiencies.heavyMelee}}/>
+                    <input type="checkbox" name="system.proficiencies.heavyMelee" {{checked data.system.proficiencies.heavyMelee}}/>
                     {{localize "tinyd6.weapon.heavyMelee"}}
                 </label>
             </div>
             <div class="ranged mr-4">
                 <label>
-                    <input type="checkbox" name="data.proficiencies.lightRanged" {{checked data.data.proficiencies.lightRanged}}/>
+                    <input type="checkbox" name="system.proficiencies.lightRanged" {{checked data.system.proficiencies.lightRanged}}/>
                     {{localize "tinyd6.weapon.lightRanged"}}
                 </label>
             </div>
             <div class="ranged mr-4">
                 <label>
-                    <input type="checkbox" name="data.proficiencies.heavyRanged" {{checked data.data.proficiencies.heavyRanged}}/>
+                    <input type="checkbox" name="system.proficiencies.heavyRanged" {{checked data.system.proficiencies.heavyRanged}}/>
                     {{localize "tinyd6.weapon.heavyRanged"}}
                 </label>
             </div>
@@ -162,7 +162,7 @@
         <div class="d-flex justify-content-start mt-2">
             <label class="mr-2"><h3 class="section-header">{{localize "tinyd6.actor.proficiencies.mastered"}}</h3></label>
             <span class="border-bottom w-100">
-                <input name="data.proficiencies.masteredWeapons" type="text" value="{{data.data.proficiencies.masteredWeapons}}" placeholder="{{localize "tinyd6.sheet.none"}}"/>
+                <input name="system.proficiencies.masteredWeapons" type="text" value="{{data.system.proficiencies.masteredWeapons}}" placeholder="{{localize "tinyd6.sheet.none"}}"/>
             </span>
         </div>
     </section>
