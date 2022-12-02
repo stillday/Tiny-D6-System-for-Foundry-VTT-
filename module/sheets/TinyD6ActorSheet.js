@@ -20,6 +20,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
         data.data.system.weapons = data.data.items.filter(item => { return item.type === "weapon" && item.system.equipped });
         data.data.system.armor = data.data.items.filter(item => { return item.type === "armor" && item.system.equipped });
         data.data.system.gear = data.data.items.filter(item => { return item.type !== "trait" && item.type !== "heritage" });
+        data.data.system.description = TextEditor.enrichHTML(this.object.system.description.value, {async: false});
         console.log('data', data)
         return data;
     }
@@ -41,71 +42,73 @@ export default class TinyD6ActorSheet extends ActorSheet {
         super.activateListeners(html);
     }
 
-    activateEditor(name, options={}, initialContent="") {
-        console.log('my NAME', name);
-        console.log('EEE', this.editors)
-        const editor = this.editors[name];
-        console.log('I love Editor', editor)
-        console.log('wer', editor.initial)
-        if ( !editor ) throw new Error(`${name} is not a registered editor name!`);
-        options = mergeObject(editor.options, options);
-        options.height = options.target.offsetHeight;
-        TextEditor.create(options, initialContent || editor.initial).then(mce => {
-            editor.mce = mce;
-            editor.changed = false;
-            editor.active = true;
-            mce.focus();
-            mce.on('change', ev => editor.changed = true);
-        });
-    }
+    // activateEditor(name, options={}, initialContent="") {
+    //     console.log('my NAME', name);
+    //     console.log('EEE', this.editors)
+    //     const editor = this.editors[name];
+    //     console.log('I love Editor', editor)
+    //     console.log('wer', options)
+    //     if ( !editor ) throw new Error(`${name} is not a registered editor name!`);
+    //     options = mergeObject(editor.options, options);
+    //     options.height = options.target.offsetHeight;
+    //     TextEditor.create(options, initialContent || editor.initial).then(mce => {
+    //         editor.mce = mce;
+    //         editor.changed = false;
+    //         editor.active = true;
+    //         editor.initial = true;
+    //         mce.focus();
+    //         mce.on('change', ev => editor.changed = true);
+    //     });
+    // }
 
-    /**
-     * Activate a TinyMCE editor instance present within the form
-     * @param div {HTMLElement}
-     * @private
-     */
-    _activateEditor(div) {
-        // Get the editor content div
-        const name = div.getAttribute("data-edit");
-        const button = div.previousSibling;
-        const hasButton = button && button.classList.contains("editor-edit");
-        const wrap = div.parentElement.parentElement;
-        const wc = $(div).parents(".window-content")[0];
-        // Determine the preferred editor height
-        const heights = [wrap.offsetHeight, wc ? wc.offsetHeight : null];
-        if ( div.offsetHeight > 0 ) heights.push(div.offsetHeight);
-        let height = Math.min(...heights.filter(h => Number.isFinite(h)));
+    // /**
+    //  * Activate a TinyMCE editor instance present within the form
+    //  * @param div {HTMLElement}
+    //  * @private
+    //  */
+    // _activateEditor(div) {
+    //     // Get the editor content div
+    //     const name = div.getAttribute("data-edit");
+    //     console.log('ACTIVE NAME', name);
+    //     const button = div.previousSibling;
+    //     const hasButton = button && button.classList.contains("editor-edit");
+    //     const wrap = div.parentElement.parentElement;
+    //     const wc = $(div).parents(".window-content")[0];
+    //     // Determine the preferred editor height
+    //     const heights = [wrap.offsetHeight, wc ? wc.offsetHeight : null];
+    //     if ( div.offsetHeight > 0 ) heights.push(div.offsetHeight);
+    //     let height = Math.min(...heights.filter(h => Number.isFinite(h)));
 
-        // Get initial content
-        const initialContent = getProperty(this.object.system, name);
-        //console.log("tinyd6 | name: ", name);
-        //console.log("tinyd6 | initialContent:", initialContent);
-        const editorOptions = {
-            target: div,
-            height: height,
-            save_onsavecallback: mce => this.saveEditor(name)
-        };
+    //     // Get initial content
+    //     const initialContent = getProperty(this.object.system, name);
+    //     //console.log("tinyd6 | name: ", name);
+    //     console.log("tinyd6 | initialContent:", initialContent);
+    //     const editorOptions = {
+    //         target: div,
+    //         height: height,
+    //         save_onsavecallback: mce => this.saveEditor(name)
+    //     };
 
-        // Add record to editors registry
-        this.editors[name] = {
-            target: name,
-            button: button,
-            hasButton: hasButton,
-            mce: null,
-            active: !hasButton,
-            changed: false,
-            options: editorOptions,
-            initial: initialContent
-        };
+    //     // Add record to editors registry
+    //     this.editors[name] = {
+    //         target: name,
+    //         button: button,
+    //         hasButton: hasButton,
+    //         mce: null,
+    //         active: !hasButton,
+    //         changed: false,
+    //         options: editorOptions,
+    //         initial: initialContent
+    //     };
 
-        // If we are using a toggle button, delay activation until it is clicked
-        if (hasButton) button.onclick = event => {
-            button.style.display = "none";
-            this.activateEditor(name, editorOptions, initialContent);
-        };
-        // Otherwise activate immediately
-        else this.activateEditor(name, editorOptions, initialContent);
-    }
+    //     // If we are using a toggle button, delay activation until it is clicked
+    //     if (hasButton) button.onclick = event => {
+    //         button.style.display = "none";
+    //         this.activateEditor(name, editorOptions, initialContent);
+    //     };
+    //     // Otherwise activate immediately
+    //     else this.activateEditor(name, editorOptions, initialContent);
+    // }
 
     async _onDieRoll(event)
     {
