@@ -12,7 +12,8 @@
           "max": 12
         },
         "traits": {},
-        "description": ""
+        "description": "",
+        "biography": ""
       },
       "causesCorruption": {
         "corruptionTest": "standard"

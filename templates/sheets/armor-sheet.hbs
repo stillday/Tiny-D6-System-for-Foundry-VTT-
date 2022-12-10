@@ -9,7 +9,7 @@
         <tr>
             <td>
                 <select name="data.group">
-                    {{#select data.data.group}}
+                    {{#select data.system.group}}
                         {{#each config.armorTypes as |name type|}}
                             <option value="{{type}}">{{localize name}}</option>
                         {{/each}}

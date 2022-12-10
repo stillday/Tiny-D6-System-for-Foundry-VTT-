@@ -14,33 +14,33 @@ export default class TinyD6ItemSheet extends ItemSheet {
     getData() {
         const data = super.getData();
 
-        data.data.traits = {};
+        data.data.system.traits = {};
         data.config = CONFIG.tinyd6;
-
+        data.tinyWeaponDescription = TextEditor.enrichHTML(this.object.system.description.value, {async: false});
         //console.log("tinyd6 | ITEM DATA (after)", data);
         return data;
     }
 
-    activateListeners(html)
-    {
-        html.find('.editor-content[data-edit]').each((i, div) => this._activateEditor(div));
-        super.activateListeners(html);
-    }
+    // activateListeners(html)
+    // {
+    //     html.find('.editor-content[data-edit]').each((i, div) => this._activateEditor(div));
+    //     super.activateListeners(html);
+    // }
 
 
-    activateEditor(name, options={}, initialContent="") {
-        const editor = this.editors[name];
-        if ( !editor ) throw new Error(`${name} is not a registered editor name!`);
-        options = mergeObject(editor.options, options);
-        options.height = options.target.offsetHeight;
-        TextEditor.create(options, initialContent || editor.initial).then(mce => {
-            editor.mce = mce;
-            editor.changed = false;
-            editor.active = true;
-            mce.focus();
-            mce.on('change', ev => editor.changed = true);
-        });
-    }
+    // activateEditor(name, options={}, initialContent="") {
+    //     const editor = this.editors[name];
+    //     if ( !editor ) throw new Error(`${name} is not a registered editor name!`);
+    //     options = mergeObject(editor.options, options);
+    //     options.height = options.target.offsetHeight;
+    //     TextEditor.create(options, initialContent || editor.initial).then(mce => {
+    //         editor.mce = mce;
+    //         editor.changed = false;
+    //         editor.active = true;
+    //         mce.focus();
+    //         mce.on('change', ev => editor.changed = true);
+    //     });
+    // }
 
     /**
      * Activate a TinyMCE editor instance present within the form
