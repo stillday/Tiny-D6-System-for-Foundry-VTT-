@@ -8,8 +8,8 @@
     </div>
     <h2 class="section-header">{{localize "tinyd6.sheet.description"}}</h2>
     {{ data }}
-    {{editor content=data.system.description target="system.description" button=true owner=owner editable=editable}}
+    {{editor content=item.system.description target="system.description.value" button=true editable=editable}}
 
     <h2 class="section-header">{{localize "tinyd6.heritage.trait"}}</h2>
-    {{editor content=data.system.trait target="system.trait" button=true owner=owner editable=editable}}
+    {{editor content=item.system.trait target="system.trait.value" button=true editable=editable}}
 </form>
