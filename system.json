@@ -1,15 +1,22 @@
 {
-  "name": "tinyd6",
+  "id": "tinyd6",
   "title": "Tiny D6 (Unofficial)",
   "description": "Tiny D6 system module for Foundry VTT to facilitate playing Tiny D6 games such as Tiny Dungeon and Tiny Frontiers. Currently in Alpha so expect breaking changes in any update.",
-  "author": "architech99",
+  "version": "0.3.0",
+  "compatibility": {
+    "minimum": 10,
+    "verified": 10.120,
+    "maximum": 10
+  },
   "authors": [
-    "architech99"
+    {
+      "name": "Jan-Dennis Drenkhahn",
+      "url": "gilneas.at",
+      "email": "jan-dennisd@outlook.at",
+      "discord": "crash#7509"
+    }
   ],
   "flags": {},
-  "version": "0.3.0",
-  "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "9",
   "scripts": [],
   "esmodules": [
     "module/tinyd6.js",
@@ -31,8 +38,6 @@
     }
   ],
   "packs": [],
-  "system": [],
-  "dependencies": [],
   "socket": false,
   "url": "https://github.com/stillday/Tiny-D6-System-for-Foundry-VTT-",
   "manifest": "https://github.com/stillday/Tiny-D6-System-for-Foundry-VTT-/releases/latest/download/system.json",

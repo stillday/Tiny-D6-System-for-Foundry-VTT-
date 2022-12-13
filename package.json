@@ -2,7 +2,7 @@
   "name": "foundry-tiny-d6",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Peter Adams <peter@solminion.com>",
+  "author": "",
   "license": "MIT",
   "devDependencies": {
     "bootstrap": "^5.2.2",
