@@ -19,7 +19,6 @@ export default class TinyD6ItemSheet extends ItemSheet {
         data.config = CONFIG.tinyd6;
         data.tinyItemDescription = TextEditor.enrichHTML(this.object.system.description.value, {async: false});
         data.tinyItemTrait = TextEditor.enrichHTML(this.object.system.trait.value, {async: false});
-        console.log('data', data)
         return data;
     }
 }
