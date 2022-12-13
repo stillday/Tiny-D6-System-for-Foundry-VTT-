@@ -122,8 +122,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
         event.preventDefault();
 
         const element = event.currentTarget;
-        const currentDamage = parseInt(this.actor.data.system.wounds.value ?? 0);
-        console.log('ccc', currentDamage);
+        const currentDamage = parseInt(this.actor.system.wounds.value ?? 0);
         if (element.checked)
         {
             this.actor.update({
