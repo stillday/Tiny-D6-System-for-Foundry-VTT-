@@ -79,7 +79,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
         event.preventDefault();
         let element = event.currentTarget;
         let itemId = element.closest("[data-item-id]").dataset.itemId;
-        return this.actor.system.items.get(itemId).delete();
+        return this.actor.items.get(itemId).delete();
     }
 
     _onItemShow(event)
@@ -87,7 +87,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
         event.preventDefault();
         let element = event.currentTarget;
         let itemId = element.closest("[data-item-id]").dataset.itemId;
-        let item = this.actor.system.items.get(itemId);
+        let item = this.actor.items.get(itemId);
 
         item.sheet.render(true);
     }
