@@ -70,7 +70,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
             type: element.dataset.type
         };
 
-    
+        console.log('my actor', this.actor.createEmbeddedDocuments)
         return this.actor.createEmbeddedDocuments('Item', [ itemData ]);
     }
 
@@ -87,6 +87,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
         event.preventDefault();
         let element = event.currentTarget;
         let itemId = element.closest("[data-item-id]").dataset.itemId;
+        console.log('this is it', this.actor)
         let item = this.actor.items.get(itemId);
 
         item.sheet.render(true);
