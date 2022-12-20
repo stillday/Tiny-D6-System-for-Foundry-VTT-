@@ -17,10 +17,12 @@
                 <div class="heritage property d-flex justify-content-between border-bottom" data-item-id="{{data.system.heritage._id}}">
                     <label><span>{{localize config.heritageHeaderPath}}</span></label>
                     <div class="heritage-value ml-auto">
-                        <a class="item-show d-inline-block h-100">{{data.system.heritage}}</a>
+                        <a class="item-show d-inline-block h-100">{{data.system.heritage.name}}</a>
                     </div>
                     {{#if data.system.heritage}}
                         <a class="item-control item-delete ml-2 my-auto" title="{{localize config.heritageDeleteTooltipPath}}"><i class="fas fa-times"></i></a>
+                     {{^}}   
+                        <span>{{localize "tinyd6.actor.heritageHink"}}</span>
                     {{/if}}
                 </div>
                 <div class="family-trade property d-flex justify-content-between border-bottom">
