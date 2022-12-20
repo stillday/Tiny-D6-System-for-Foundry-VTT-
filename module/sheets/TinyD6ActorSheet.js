@@ -21,7 +21,6 @@ export default class TinyD6ActorSheet extends ActorSheet {
         data.data.system.armor = data.data.items.filter(item => { return item.type === "armor" && item.system.equipped });
         data.data.system.gear = data.data.items.filter(item => { return item.type !== "trait" && item.type !== "heritage" });
         data.tinyBiography = TextEditor.enrichHTML(this.object.system.biography.value, {async: false});
-        console.log('data', data)
         return data;
     }
 
@@ -70,7 +69,6 @@ export default class TinyD6ActorSheet extends ActorSheet {
             type: element.dataset.type
         };
 
-        console.log('my actor', this.actor.createEmbeddedDocuments)
         return this.actor.createEmbeddedDocuments('Item', [ itemData ]);
     }
 
