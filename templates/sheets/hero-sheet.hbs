@@ -65,7 +65,7 @@
                 <div class="health-meter">
                     {{#times data.system.wounds.max}}
                             <input type="checkbox" value="1" class="health-box d-inline-block"
-                                   {{#if (lt . ../data.system.wounds.value)}}checked{{/if}} />
+                                   {{#if (lt . ../data.system.wounds.value)}}{{/if}} />
                         {{/times}}
                 </div>
                 {{#if owner}}
