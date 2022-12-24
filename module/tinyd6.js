@@ -92,7 +92,7 @@ Hooks.on("createItem", (item, temporary) => {
             _id: item.actor.system._id,
             data: {
                 wounds: {
-                    value: item.system.startingHealth,
+                    value: 0,
                     max: item.system.startingHealth
                 },
                 corruptionThreshold: {

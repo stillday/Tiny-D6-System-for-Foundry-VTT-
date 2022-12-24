@@ -139,7 +139,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
                 }
             });
         }
-        else if (!element.checked || currentDamage > 0)
+        else if (currentDamage > 0)
         {
             console.log('dada', element)
             this.actor.update({
