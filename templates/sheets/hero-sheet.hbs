@@ -64,8 +64,9 @@
                 </div>
                 <div class="health-meter">
                     {{#times data.system.wounds.max}}
-                        <input type="checkbox" value="1" class="health-box d-inline-block" {{#if (lt . ../data.systen.wounds.value)}}checked{{/if}} />
-                    {{/times}}
+                            <input type="checkbox" value="1" class="health-box d-inline-block"
+                                   {{#if (lt . ../data.system.wounds.value)}}{{/if}} />
+                        {{/times}}
                 </div>
                 {{#if owner}}
                     <p class="help">{{localize "tinyd6.actor.wounds.help"}}</p>

@@ -122,8 +122,11 @@ export default class TinyD6ActorSheet extends ActorSheet {
 
         const element = event.currentTarget;
         const currentDamage = parseInt(this.actor.system.wounds.value ?? 0);
-        if (element.checked)
+        console.log('this element', element.checked)
+        console.log('damage', currentDamage)
+        if (element.checked === true)
         {
+            console.log('checked', element)
             this.actor.update({
                 _id: this.actor.system._id,
                 data: {
@@ -136,8 +139,9 @@ export default class TinyD6ActorSheet extends ActorSheet {
                 }
             });
         }
-        else if (currentDamage > 0)
+        else if (!element.checked || currentDamage > 0)
         {
+            console.log('dada', element)
             this.actor.update({
                 _id: this.actor.system._id,
                 data: {
