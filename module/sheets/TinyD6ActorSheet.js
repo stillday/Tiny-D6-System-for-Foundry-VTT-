@@ -108,10 +108,11 @@ export default class TinyD6ActorSheet extends ActorSheet {
     }
 
     _toggleEquipped(id, item) {
+        console.log('ddwer', item)
         return {
             _id: id,
             data: {
-                equipped: !item.system.data.equipped,
+                equipped: !item.system.equipped,
             },
         };
     }
@@ -122,11 +123,8 @@ export default class TinyD6ActorSheet extends ActorSheet {
 
         const element = event.currentTarget;
         const currentDamage = parseInt(this.actor.system.wounds.value ?? 0);
-        console.log('this element', element.checked)
-        console.log('damage', currentDamage)
         if (element.checked === true)
         {
-            console.log('checked', element)
             this.actor.update({
                 _id: this.actor.system._id,
                 data: {
@@ -141,7 +139,6 @@ export default class TinyD6ActorSheet extends ActorSheet {
         }
         else if (currentDamage > 0)
         {
-            console.log('dada', element)
             this.actor.update({
                 _id: this.actor.system._id,
                 data: {
