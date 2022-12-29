@@ -4,11 +4,20 @@ import { TinyD6System } from "../tinyd6.js";
 
 export default class TinyD6HeroSheet extends TinyD6ActorSheet {
     static get defaultOptions() {
+        console.log(game.settings.get(TinyD6System.SYSTEM, "theme"));
         return mergeObject(super.defaultOptions, {
-            template: "systems/tinyd6/templates/sheets/hero-sheet.hbs",
             classes: [ TinyD6System.SYSTEM, "sheet", "hero", game.settings.get(TinyD6System.SYSTEM, "theme") ]
         });
     }
+
+    get template() {
+        if (game.settings.get(TinyD6System.SYSTEM, "theme") === 'tiny-dungeon') {
+            return "systems/tinyd6/templates/sheets/hero-dungeon-sheet.hbs";
+        }
+
+        return "systems/tinyd6/templates/sheets/hero-sheet.hbs";
+    }
+    // tiny-dungeon
 
     getData() {
         const data = super.getData();
