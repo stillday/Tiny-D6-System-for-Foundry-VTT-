@@ -17,16 +17,22 @@ export async function RollTest({
     }
     
     const rollForumla = `${numberOfDice}d${numberOfSides}cs>=${threshold}`;
+    console.log(rollForumla);
+    let init = await new Roll('1d6 + 1d6').evaluate({'async': true});
+    console.log(init)
 
     // Execute the roll
     let result = await new Roll(rollForumla, {}).evaluate({'async': true})
-    let renderedRoll = await renderTemplate("systems/tinyd6/templates/partials/test-result.hbs", { rollResult: result });
+    // let renderedRoll = await renderTemplate("systems/tinyd6/templates/partials/test-result.hbs", { rollResult: result });
     // let renderedRoll = await result.render({ result: result, template: "systems/tinyd6/templates/partials/test-result.hbs" });
+    let renderedRoll = await renderTemplate("systems/tinyd6/templates/tiny-dungeon/partials/init-result.hbs", { rollResult: init });
 
     const chatData = {
         speaker: ChatMessage.getSpeaker(),
         content: renderedRoll
     };
+
+
 
     result.toMessage(chatData);
 }

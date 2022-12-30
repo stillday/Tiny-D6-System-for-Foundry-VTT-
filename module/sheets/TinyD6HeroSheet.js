@@ -12,7 +12,7 @@ export default class TinyD6HeroSheet extends TinyD6ActorSheet {
 
     get template() {
         if (game.settings.get(TinyD6System.SYSTEM, "theme") === 'tiny-dungeon') {
-            return "systems/tinyd6/templates/sheets/hero-dungeon-sheet.hbs";
+            return "systems/tinyd6/templates/tiny-dungeon/sheets/hero-dungeon-sheet.hbs";
         }
 
         return "systems/tinyd6/templates/sheets/hero-sheet.hbs";
