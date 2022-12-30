@@ -51,14 +51,26 @@ export class TinyD6System {
     }
     
     static async _preloadHandlebarsTemplates() {
-        const templatePaths = [
-            "systems/tinyd6/templates/partials/trait-block.hbs",
-            "systems/tinyd6/templates/partials/roll-bar.hbs",
-            "systems/tinyd6/templates/partials/item-header.hbs",
-            "systems/tinyd6/templates/partials/inventory-card.hbs"
-        ];
+        if (game.settings.get(TinyD6System.SYSTEM, "theme") === 'tiny-cthulhu') {
+            const templatePaths = [
+                "systems/tinyd6/templates/partials/trait-block.hbs",
+                "systems/tinyd6/templates/partials/roll-bar.hbs",
+                "systems/tinyd6/templates/partials/item-header.hbs",
+                "systems/tinyd6/templates/partials/inventory-card.hbs"
+            ];
+            return loadTemplates(templatePaths);
+        }
+        
+        if (game.settings.get(TinyD6System.SYSTEM, "theme") === 'tiny-dungeon') {
+            const templatePaths = [
+                "systems/tinyd6/templates/partials/trait-block.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/partials/roll-bar.hbs",
+                "systems/tinyd6/templates/partials/item-header.hbs",
+                "systems/tinyd6/templates/partials/inventory-card.hbs"
+            ];
+            return loadTemplates(templatePaths);
+        }
     
-        return loadTemplates(templatePaths);
     }
 
     static emit(action, args = {}) {
