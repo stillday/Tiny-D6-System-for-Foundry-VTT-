@@ -2,6 +2,9 @@
     <div>
         <div>
             <img src="systems/tinyd6/assets/images/tiny-d-logo.png" alt="tiny dungeon logo">
+        <section>
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/character.hbs"}}
+        </section>
         </div>
         <div>
             {{#if owner}}
@@ -9,6 +12,9 @@
                     {{> "systems/tinyd6/templates/tiny-dungeon/partials/roll-bar.hbs" flexClass=""}}
                 </div>
             {{/if}}
+            <section>
+                
+            </section>
         </div>
     </div>
 </form>

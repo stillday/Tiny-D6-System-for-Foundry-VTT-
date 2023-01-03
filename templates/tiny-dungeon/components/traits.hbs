@@ -1,0 +1,17 @@
+    <section class="traits">
+        <h2 class="floating-header">{{localize "tinyd6.actor.traits"}}</h2>
+        <div class="floating-action">
+            <a class="item-add" data-type="trait">
+                <span class="fas fa-plus"></span>
+            </a>
+        </div>
+        <div class="heritage-trait border-bottom">
+            <h3>{{localize config.heritageTraitPath}}</h3>
+            {{{data.system.heritage.name}}}
+        </div>
+        <ul class="actor-items px-0">
+            {{#each data.system.traits as |trait id|}}
+                {{> "systems/tinyd6/templates/partials/trait-block.hbs" trait}}
+            {{/each}}
+        </ul>
+    </section>
