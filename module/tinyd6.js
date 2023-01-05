@@ -66,6 +66,7 @@ export class TinyD6System {
                 "systems/tinyd6/templates/partials/trait-block.hbs",
                 "systems/tinyd6/templates/tiny-dungeon/components/character.hbs",
                 "systems/tinyd6/templates/tiny-dungeon/components/traits.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/components/heritage.hbs",
                 "systems/tinyd6/templates/tiny-dungeon/partials/roll-bar.hbs",
                 "systems/tinyd6/templates/tiny-dungeon/partials/trait-block.hbs",
                 "systems/tinyd6/templates/partials/item-header.hbs",
