@@ -1,20 +1,18 @@
 <form class="actor-sheet {{classes}} m-0" autocomplete="off">
-    <div>
-        <div>
+    <div class="row">
+        <div class="col">
             <img src="systems/tinyd6/assets/images/tiny-d-logo.png" alt="tiny dungeon logo">
-        <section>
             {{> "systems/tinyd6/templates/tiny-dungeon/components/character.hbs"}}
-        </section>
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/traits.hbs"}}
+
         </div>
-        <div>
+        <div class="col">
             {{#if owner}}
                 <div class="mb-3">
                     {{> "systems/tinyd6/templates/tiny-dungeon/partials/roll-bar.hbs" flexClass=""}}
                 </div>
             {{/if}}
-            <section>
-                
-            </section>
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/heritage.hbs"}}
         </div>
     </div>
 </form>
