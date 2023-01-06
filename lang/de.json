@@ -129,7 +129,8 @@
       "actions": {
         "editTrait": "Merkmal bearbeiten",
         "deleteTrait": "Merkmal entfernen"
-      }
+      },
+      "heritageHink": "Ziehe einen Archetyp hierher"
     },
     "weaponCategories":
     {

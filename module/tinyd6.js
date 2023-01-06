@@ -62,7 +62,6 @@ export class TinyD6System {
     }
 
     static emit(action, args = {}) {
-        console.log(action, TinyD6System.SOCKET);
         args.action = action;
         args.senderId = game.user.id;
         game.socket.emit(TinyD6System.SOCKET, args, (resp) => { console.log(resp); });
@@ -87,21 +86,18 @@ Hooks.on("ready", TinyD6System.ready);
 Hooks.on("createItem", (item, temporary) => {
     console.log("tinyd6 | handling owned item");
 
-    console.log("ACTOR:", item.actor);
-    console.log("ITEM:", item);
-
     if (item.type === "heritage")
     {
-        item.actor.data.update({
-            _id: item.actor.data._id,
+        item.actor.update({
+            _id: item.actor.system._id,
             data: {
                 wounds: {
-                    value: item.data.data.startingHealth,
-                    max: item.data.data.startingHealth
+                    value: 0,
+                    max: item.system.startingHealth
                 },
                 corruptionThreshold: {
                     value: 0,
-                    max: item.data.data.corruptionThreshold
+                    max: item.system.corruptionThreshold
                 }
             }
         });

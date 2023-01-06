@@ -15,12 +15,12 @@ export default class TinyD6ActorSheet extends ActorSheet {
         data.config.enableDamageReduction = game.settings.get('tinyd6', 'enableDamageReduction');
         data.config.advancementMethod = game.settings.get('tinyd6', 'enableAdvancement');
         
-        data.data.data.owner = this.actor.isOwner;
-        data.data.data.traits = data.data.items.filter(item => { return item.type === "trait" });
-        data.data.data.weapons = data.data.items.filter(item => { return item.type === "weapon" && item.data.equipped });
-        data.data.data.armor = data.data.items.filter(item => { return item.type === "armor" && item.data.equipped });
-        data.data.data.gear = data.data.items.filter(item => { return item.type !== "trait" && item.type !== "heritage" });
-
+        data.data.system.owner = this.actor.isOwner;
+        data.data.system.traits = data.data.items.filter(item => { return item.type === "trait" });
+        data.data.system.weapons = data.data.items.filter(item => { return item.type === "weapon" && item.system.equipped });
+        data.data.system.armor = data.data.items.filter(item => { return item.type === "armor" && item.system.equipped });
+        data.data.system.gear = data.data.items.filter(item => { return item.type !== "trait" && item.type !== "heritage" });
+        data.tinyBiography = TextEditor.enrichHTML(this.object.system.biography.value, {async: false});
         return data;
     }
 
@@ -39,69 +39,6 @@ export default class TinyD6ActorSheet extends ActorSheet {
         html.find(".health-box").on('click change', this._setCurrentDamage.bind(this));
 
         super.activateListeners(html);
-    }
-
-    activateEditor(name, options={}, initialContent="") {
-        const editor = this.editors[name];
-        if ( !editor ) throw new Error(`${name} is not a registered editor name!`);
-        options = mergeObject(editor.options, options);
-        options.height = options.target.offsetHeight;
-        TextEditor.create(options, initialContent || editor.initial).then(mce => {
-            editor.mce = mce;
-            editor.changed = false;
-            editor.active = true;
-            mce.focus();
-            mce.on('change', ev => editor.changed = true);
-        });
-    }
-
-    /**
-     * Activate a TinyMCE editor instance present within the form
-     * @param div {HTMLElement}
-     * @private
-     */
-    _activateEditor(div) {
-        // Get the editor content div
-        const name = div.getAttribute("data-edit");
-        const button = div.nextElementSibling;
-        const hasButton = button && button.classList.contains("editor-edit");
-        const wrap = div.parentElement.parentElement;
-        const wc = $(div).parents(".window-content")[0];
-
-        // Determine the preferred editor height
-        const heights = [wrap.offsetHeight, wc ? wc.offsetHeight : null];
-        if ( div.offsetHeight > 0 ) heights.push(div.offsetHeight);
-        let height = Math.min(...heights.filter(h => Number.isFinite(h)));
-
-        // Get initial content
-        const initialContent = getProperty(this.object.data, name);
-        //console.log("tinyd6 | name: ", name);
-        //console.log("tinyd6 | initialContent:", initialContent);
-        const editorOptions = {
-            target: div,
-            height: height,
-            save_onsavecallback: mce => this.saveEditor(name)
-        };
-
-        // Add record to editors registry
-        this.editors[name] = {
-            target: name,
-            button: button,
-            hasButton: hasButton,
-            mce: null,
-            active: !hasButton,
-            changed: false,
-            options: editorOptions,
-            initial: initialContent
-        };
-
-        // If we are using a toggle button, delay activation until it is clicked
-        if (hasButton) button.onclick = event => {
-            button.style.display = "none";
-            this.activateEditor(name, editorOptions, initialContent);
-        };
-        // Otherwise activate immediately
-        else this.activateEditor(name, editorOptions, initialContent);
     }
 
     async _onDieRoll(event)
@@ -132,7 +69,6 @@ export default class TinyD6ActorSheet extends ActorSheet {
             type: element.dataset.type
         };
 
-    
         return this.actor.createEmbeddedDocuments('Item', [ itemData ]);
     }
 
@@ -141,7 +77,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
         event.preventDefault();
         let element = event.currentTarget;
         let itemId = element.closest("[data-item-id]").dataset.itemId;
-        return this.actor.data.items.get(itemId).delete();
+        return this.actor.items.get(itemId).delete();
     }
 
     _onItemShow(event)
@@ -149,7 +85,8 @@ export default class TinyD6ActorSheet extends ActorSheet {
         event.preventDefault();
         let element = event.currentTarget;
         let itemId = element.closest("[data-item-id]").dataset.itemId;
-        let item = this.actor.data.items.get(itemId);
+        console.log('this is it', this.actor)
+        let item = this.actor.items.get(itemId);
 
         item.sheet.render(true);
     }
@@ -171,10 +108,11 @@ export default class TinyD6ActorSheet extends ActorSheet {
     }
 
     _toggleEquipped(id, item) {
+        console.log('ddwer', item)
         return {
             _id: id,
             data: {
-                equipped: !item.data.data.equipped,
+                equipped: !item.system.equipped,
             },
         };
     }
@@ -184,11 +122,11 @@ export default class TinyD6ActorSheet extends ActorSheet {
         event.preventDefault();
 
         const element = event.currentTarget;
-        const currentDamage = parseInt(this.actor.data.data.wounds.value ?? 0);
-        if (element.checked)
+        const currentDamage = parseInt(this.actor.system.wounds.value ?? 0);
+        if (element.checked === true)
         {
             this.actor.update({
-                _id: this.actor.data._id,
+                _id: this.actor.system._id,
                 data: {
                     wounds: {
                         value: (currentDamage + 1)
@@ -202,7 +140,7 @@ export default class TinyD6ActorSheet extends ActorSheet {
         else if (currentDamage > 0)
         {
             this.actor.update({
-                _id: this.actor.data._id,
+                _id: this.actor.system._id,
                 data: {
                     wounds: {
                         value: (currentDamage - 1)

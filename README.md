@@ -14,7 +14,7 @@ Tiny D6 is a minimalist ruleset for playing tabletop RPGs in a variety of genres
 
 ## Installation
 
-Manifest URL: `https://gitlab.com/architech99/foundry-tinyd6/-/raw/master/system.json`
+Manifest URL: `https://github.com/stillday/Tiny-D6-System-for-Foundry-VTT-/releases/latest/download/system.json`
 
 The system should now show up in your foundry and can be used to create a new world.
 
@@ -32,3 +32,7 @@ you think the right way is, you can code wrong on your own projects.
 
 I use the GitLab issue board and milestones.  Please only contribute issues slated for the next milestone, and put
 the issue number in the name of the merge request.  Thanks!
+
+## Development
+### System.json
+for changes at the system.json read please the introduction from foundryvtt [link](https://foundryvtt.com/article/manifest-migration-guide/)

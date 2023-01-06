@@ -8,11 +8,12 @@
       "commonStats": {
         "name": "",
         "wounds": {
-          "value": 12,
+          "value": 0,
           "max": 12
         },
         "traits": {},
-        "description": ""
+        "description": "",
+        "biography": ""
       },
       "causesCorruption": {
         "corruptionTest": "standard"
@@ -22,6 +23,7 @@
         "people": "",
         "homeland": "",
         "age": "",
+        "biography": "",
         "eyes": "",
         "hair": "",
         "familyTrade": "",
@@ -45,7 +47,7 @@
       },
       "hero": {
         "corruptionThreshold": {
-          "value": 6,
+          "value": 0,
           "max": 6
         }
       }

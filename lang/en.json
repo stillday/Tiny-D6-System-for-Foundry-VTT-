@@ -129,7 +129,8 @@
       "actions": {
         "editTrait": "Edit Trait",
         "deleteTrait": "Remove Trait"
-      }
+      },
+      "heritageHink": "Drag an archetype here"
     },
     "weaponCategories":
     {

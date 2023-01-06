@@ -9,4 +9,11 @@ export default class TinyD6NpcSheet extends TinyD6ActorSheet {
             classes: [ TinyD6System.SYSTEM, "sheet", "npc", game.settings.get(TinyD6System.SYSTEM, "theme") ]
         });
     }
+    getData() {
+        const data = super.getData();
+
+        data.config = CONFIG.tinyd6;
+        data.tinyNPCDescription = TextEditor.enrichHTML(this.object.system.description.value, {async: false});
+        return data;
+    }
 }
