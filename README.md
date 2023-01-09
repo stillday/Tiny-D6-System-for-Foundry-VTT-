@@ -1,12 +1,14 @@
 # Tiny D6 for Foundry VTT
 
-**VERSION:** 0.1.0-beta
+**VERSION:** 0.5.0-beta
 
 This system for Foundry Virtual Tabletop facilitates playing using the Tiny D6 minimalist RPG system. The system is currently in beta so breaking changes may happen on occasion.
 
 [[_TOC_]]
 
-Initially developed for my own home game using the <cite>Tiny Cthulhu</cite> ruleset, I plan to continue adding other Tiny D6 systems (<cite>Tiny Dungeon</cite>, <cite>Tiny Supers</cite>, <cite>Tiny Frontiers</cite>, etc.) in the future.
+This Project is a Copy from [TinyD6 old](https://gitlab.com/architech99/foundry-tinyd6)
+
+Initially developed for <cite>Tiny Cthulhu</cite> ruleset, We plan to continue adding other Tiny D6 systems (<cite>Tiny Dungeon</cite>, <cite>Tiny Supers</cite>, <cite>Tiny Frontiers</cite>, etc.) in the future.
 
 ## Introduction
 
