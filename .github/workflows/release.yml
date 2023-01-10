@@ -23,7 +23,7 @@ jobs:
         run: echo "::set-output name=version::$(node ./.github/workflows/get-version.js)"
 
       - name: Create installable system zip file
-        run: cd supers && zip -r ../tinyd6.zip *
+        run:  zip -r tinyd6.zip *
 
       - name: Create release
         id: create_versioned_release
@@ -31,4 +31,4 @@ jobs:
         with:
           name: ${{ steps.get-version.outputs.version }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "./supers/system.json,./tinyd6.zip"
+          artifacts: "./system.json,./tinyd6.zip"
