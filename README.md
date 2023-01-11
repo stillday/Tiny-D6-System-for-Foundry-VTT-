@@ -1,6 +1,7 @@
 # Tiny D6 for Foundry VTT
 
 **VERSION:** 0.5.0-beta
+[![Make releases](https://github.com/stillday/Tiny-D6-System-for-Foundry-VTT-/actions/workflows/release.yml/badge.svg?branch=main&event=release)](https://github.com/stillday/Tiny-D6-System-for-Foundry-VTT-/actions/workflows/release.yml)
 
 This system for Foundry Virtual Tabletop facilitates playing using the Tiny D6 minimalist RPG system. The system is currently in beta so breaking changes may happen on occasion.
 
