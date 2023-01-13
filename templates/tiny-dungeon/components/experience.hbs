@@ -1,24 +1,24 @@
 <section>
-    <h2>{{localize tinyd6.actor.xp.header}}</h2>
+    <h2>{{localize "tinyd6.actor.xp.header"}}</h2>
     <div class="row">
         <div class="col row">
             <label class="col" for="xpTotal">
-                {{localize tinyd6.actor.xp.total}}
+                {{localize "tinyd6.actor.xp.total"}}
             </label>
-            <input class="col" id="xpTotal" name="total" type="number" value="{{actor.xp.max}}" placeholder="0" />
+            <input class="col" id="xpTotal" name="total" type="number" value="{{data.system.xp.max}}" placeholder="{{localize "tinyd6.actor.xp.total"}}" dType="Number" />
         </div>
         <div class="col row">
             <label class="col" for="xpSpent">
-                {{localize tinyd6.actor.xp.spent}}
+                {{localize "tinyd6.actor.xp.spent"}}
             </label>
-            <input class="col" id="xpSpent" name="spent" type="number" value="{{actor.xp.spent}}" placeholder="0" />
+            <input class="col" id="xpSpent" name="spent" type="number" value="{{data.system.xp.spent}}" placeholder="{{localize "tinyd6.actor.xp.spent"}}" dType="Number" />
         </div>
         <div class="col row">
             <label class="col" for="xpRemain">
-                {{localize tinyd6.actor.xp.remaining}}
+                {{localize "tinyd6.actor.xp.remaining"}}
             </label>
             <div class="rol">
-                calc einbauen
+                {{data.system.xp.remaining}}
             </div>
         </div>
     </div>

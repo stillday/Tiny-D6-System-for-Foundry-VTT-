@@ -2,6 +2,7 @@
     <div class="row">
         <div class="col">
             <img src="systems/tinyd6/assets/images/tiny-d-logo.png" alt="tiny dungeon logo">
+            {{!-- <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" class="character-art img-fluid"/> --}}
             {{> "systems/tinyd6/templates/tiny-dungeon/components/character.hbs"}}
             {{> "systems/tinyd6/templates/tiny-dungeon/components/traits.hbs"}}
 
@@ -13,6 +14,11 @@
                 </div>
             {{/if}}
             {{> "systems/tinyd6/templates/tiny-dungeon/components/heritage.hbs"}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/experience.hbs"}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/health.hbs"}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/weapons.hbs"}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/equipped-items.hbs"}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/inventury.hbs"}}
         </div>
     </div>
 </form>

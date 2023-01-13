@@ -1,0 +1,18 @@
+<section>
+  <h2>{{localize "tinyd6.actor.gear"}}</h2>
+  <div class="row">
+    {{#each data.system.gear as |gearItem id|}}
+     {{#if (eq gearItem.type "gear")}}
+        <{{#if tagName}}{{tagName}}{{^}}li{{/if}} class="{{classes}} actor-item" data-item-id="{{gearItem._id}}">
+          <div class="d-flex justify-content-between">
+              <img src="{{gearItem.img}}" title="{{gearItem.name}}" width="24" height="24" class="align-middle mr-2"/>
+              <h4 class="mr-auto">
+                  <a class="item-show d-inline-block h-100">{{gearItem.name}}</a>
+              </h4>
+              <a class="item-control item-delete ml-2" title="{{localize "tinyd6.actor.actions.deleteTrait"}}"><i class="fas fa-times"></i></a>
+          </div>
+        </{{#if tagName}}{{tagName}}{{^}}li{{/if}}>
+      {{/if}}
+    {{/each}}
+  </div>
+</section>

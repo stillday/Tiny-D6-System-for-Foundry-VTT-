@@ -45,38 +45,5 @@
                     {{/if}}
                 </div>
             {{/if}}
-            {{#if (eq config.advancementMethod 'xp')}}
-                <div class="col-3">
-                    <section class="experience d-flex flex-column justify-content-between">
-                        <h3 class="section-header">{{localize "tinyd6.actor.xp.header"}}</h3>
-                        <div class="stat-values property d-flex justify-content-between border-bottom">
-                            <label class="mr-2"><span>{{localize "tinyd6.actor.xp.total"}}</span></label>
-                            <input name="data.xp.max" class="text-right" type="text" value="{{data.system.xp.max}}" placeholder="{{localize "tinyd6.actor.xp.total"}}" dType="Number"/>
-                        </div>
-                        <div class="stat-values property d-flex justify-content-between border-bottom">
-                            <label class="mr-2"><span>{{localize "tinyd6.actor.xp.spent"}}</span></label>
-                            <input name="data.xp.spent" class="text-right" type="text" value="{{data.system.xp.spent}}" placeholder="{{localize "tinyd6.actor.xp.spent"}}" dType="Number"/>
-                        </div>
-                        <div class="stat-values property d-flex justify-content-between border-bottom">
-                            <label class="mr-2"><span>{{localize "tinyd6.actor.xp.remaining"}}</span></label>
-                            <span class="d-block">
-                                {{data.system.xp.remaining}}
-                            </span>
-                        </div>
-                    </section>
-                </div>
-            {{/if}}
-            {{#if (eq config.advancementMethod 'minimalist')}}
-                <div class="col-3">
-                    <section class="experience d-flex flex-column justify-content-between">
-                        <h3 class="section-header">{{localize "tinyd6.actor.xp.progression"}}</h3>
-                        <div class="d-flex">
-                            {{#times data.system.advancement.max}}
-                                <input type="checkbox" value="1" class="advancement-progress-box d-inline-block" {{#if (lt . ../data.system.advancement.value)}}checked{{/if}} />
-                            {{/times}}
-                        </div>
-                    </section>
-                </div>
-            {{/if}}
         </div>
     </section>
