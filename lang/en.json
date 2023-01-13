@@ -154,6 +154,7 @@
       "standard": "Standard"
     },
     "weapon": {
+      "headline": "Weapons",
       "name": "Name",
       "type": "Weapon Type",
       "damage": "Damage",
@@ -172,6 +173,7 @@
       "rangedShort": "R"
     },
     "armor": {
+      "headline": "Equipped Items",
       "name": "Name",
       "type": "Armor Type",
       "damageReduction": "DR",

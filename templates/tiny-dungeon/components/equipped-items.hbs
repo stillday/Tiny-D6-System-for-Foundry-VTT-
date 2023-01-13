@@ -1,5 +1,5 @@
-<section>
-  <h2 class="headline">Ausgestattete Gegenstände</h2>
+<section class="equipped-item">
+  <h2 class="headline">{{localize "tinyd6.armor.headline"}}</h2>
   <div class="col-4 equipped-armor">
       <span class="total-armor">{{#if config.enableDamageReduction}}{{data.system.armorTotal}}{{^}}&nbsp;{{/if}}</span>
       {{#each data.system.armor as |armor id|}}
@@ -11,15 +11,15 @@
     {{#each data.system.gear as |gearItem id|}}
       {{#if (eq gearItem.type "armor")}}
         <{{#if tagName}}{{tagName}}{{^}}li{{/if}} class="{{classes}} actor-item" data-item-id="{{gearItem._id}}">
-          <div class="d-flex justify-content-between">
-              <img src="{{gearItem.img}}" title="{{gearItem.name}}" width="24" height="24" class="align-middle mr-2"/>
-              <h4 class="mr-auto">
+          <div class="d-flex w-100 align-items-center mb-2">
+              <img src="{{gearItem.img}}" title="{{gearItem.name}}" width="50" height="50" class="align-middle mr-2"/>
+              <h4 class="mr-auto equipped-item-name">
                   <a class="item-show d-inline-block h-100">{{gearItem.name}}</a>
               </h4>
-                  <a class="item-control item-equip ml-2 {{#if gearItem.system.equipped}}equipped{{/if}}" data-field="data.equipped" title="{{localize "tinyd6.actor.actions.equipTrait"}}">
+                  <a class="item-control item-equip ml-2 equipped-item-equip {{#if gearItem.system.equipped}}equipped{{/if}}" data-field="data.equipped" title="{{localize "tinyd6.actor.actions.equipTrait"}}">
                       <span class="fas fa-tshirt"></span>
                   </a>
-              <a class="item-control item-delete ml-2" title="{{localize "tinyd6.actor.actions.deleteTrait"}}"><i class="fas fa-times"></i></a>
+              <a class="item-control item-delete ml-2 equipped-item-clos" title="{{localize "tinyd6.actor.actions.deleteTrait"}}"><i class="fas fa-times"></i></a>
           </div>
         </{{#if tagName}}{{tagName}}{{^}}li{{/if}}>
       {{/if}}
