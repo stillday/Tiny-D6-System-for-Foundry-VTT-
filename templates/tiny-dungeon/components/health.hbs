@@ -1,12 +1,12 @@
     <section class="trauma">
         <div class="row">
             <div class="col">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between headline">
                     <h2 class="section-header">{{localize "tinyd6.actor.wounds.header"}}</h2>
-                    <span class="d-flex justify-content-end ml-auto">
+                    <span class="d-flex justify-content-end ml-auto align-items-center">
                         <span class="mr-2">{{localize "tinyd6.actor.wounds.max"}}</span>
                         {{#if owner}}
-                            <input name="system.wounds.max" type="text" class="mx-2" style="width: 10%;" value="{{data.system.wounds.max}}" dType="Number"/>
+                            <input class="input-headline" name="system.wounds.max" type="text" class="mx-2" style="width: 10%;" value="{{data.system.wounds.max}}" dType="Number"/>
                         {{^}}
                             <span>{{data.system.wounds.max}}</span>
                         {{/if}}

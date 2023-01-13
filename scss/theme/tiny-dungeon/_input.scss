@@ -1,0 +1,20 @@
+.input {
+
+  &-field {
+    border-bottom: 3px solid;
+    border-radius: 0;
+    &:hover {
+      box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    }
+  }
+
+  &-headline {
+    color: #fff;
+    border-bottom: 3px solid;
+    text-align: center;
+    &:hover {
+      color: #191813;
+      border: 1px solid #fb821a;
+    }
+  }
+}

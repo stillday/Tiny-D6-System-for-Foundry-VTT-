@@ -1,9 +1,11 @@
     <section class="traits">
-        <h2 class="floating-header">{{localize "tinyd6.actor.traits"}}</h2>
-        <div class="floating-action">
-            <a class="item-add" data-type="trait">
-                <span class="fas fa-plus"></span>
-            </a>
+        <div class="d-flex justify-content-between align-items-center headline">
+            <h2 class="section-headline m-0">{{localize "tinyd6.actor.traits"}}</h2>
+            <div class="floating-action">
+                <a class="item-add" data-type="trait">
+                    <span class="fas fa-plus"></span>
+                </a>
+            </div>
         </div>
         <ul class="actor-items px-0">
             {{#each data.system.traits as |trait id|}}
