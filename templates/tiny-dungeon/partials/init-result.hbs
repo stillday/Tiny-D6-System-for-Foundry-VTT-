@@ -1,0 +1,12 @@
+<div class="tinyd6 roll roll-result bg-success">
+    <h3>{{ rollResult.total }}</h3>
+</div>
+<div class="tinyd6 dice-breakdown d-flex justify-content-center">
+    {{#each rollResult.terms as |piece|}}
+        {{#each piece.results as |die|}}
+            <span class="mx-3">
+                <span class="fas fa-2x {{face die.result }}"></span>
+            </span>
+        {{/each}}
+    {{/each}}
+</div>

@@ -1,0 +1,59 @@
+<section>
+    <h2 class="headline">Character</h2>
+    <div class="mb-2">
+        <div class="row">
+            <label class="col-3" for="actor.name">
+                {{localize "tinyd6.actor.name"}}
+            </label>
+            <input class="col input-field" id="actor.name" name="name" type="text" value="{{actor.name}}" placeholder="{{localize "tinyd6.actor.name"}}" />
+        </div>
+        {{ log 'data infos ' data }}
+        <div class="row">
+            <div class="col row">
+                <label class="col" for="actor.people">
+                    {{localize "tinyd6.actor.people"}}
+                </label>
+                <input class="col input-field" id="actor.people" name="system.people" type="text" value="{{data.system.people}}" placeholder="{{localize "tinyd6.actor.people"}}" />
+            </div>
+            <div class="col row">
+                <label class="col" for="actor.homeland">
+                    {{localize "tinyd6.actor.homeland"}}
+                </label>
+                <input class="col input-field" id="actor.homeland" name="system.homeland" type="text" value="{{data.system.homeland}}" placeholder="{{localize "tinyd6.actor.homeland"}}" />
+            </div>
+        </div>
+        <dic class="row">
+            <div class="col row">
+                <label class="col" for="actor.age">
+                    {{localize "tinyd6.actor.age"}}
+                </label>
+                <input class="col input-field" id="actor.age" name="system.age" type="number" value="{{data.system.age}}" placeholder="{{localize "tinyd6.actor.age"}}" />
+            </div>
+            <div class="col row">
+                <label class="col" for="actor.eyes">
+                    {{localize "tinyd6.actor.eyes"}}
+                </label>
+                <input class="col input-field" id="actor.eyes" name="system.eyes" type="text" value="{{data.system.eyes}}" placeholder="{{localize "tinyd6.actor.eyes"}}" />
+            </div>
+            <div class="col row">
+                <label class="col" for="actor.hair">
+                    {{localize "tinyd6.actor.hair"}}
+                </label>
+                <input class="col input-field" id="actor.hair" name="system.hair" type="text" value="{{data.system.hair}}" placeholder="{{localize "tinyd6.actor.hair"}}" />
+            </div>
+
+        </dic>
+        <div class="row">
+            <label class="col-4" for="actor.familyTrade">
+                {{localize "tinyd6.actor.familyTrade"}}
+            </label>
+            <input class="col input-field" id="actor.familyTrade" name="system.familyTrade" type="text" value="{{data.system.familyTrade}}" placeholder="{{localize "tinyd6.actor.familyTrade"}}" />
+        </div>
+        <div class="row">
+            <label class="col-4" for="actor.belief">
+                {{localize "tinyd6.actor.belief"}}
+            </label>
+            <input class="col input-field" id="actor.belief" name="system.belief" type="text" value="{{data.system.belief}}" placeholder="{{localize "tinyd6.actor.belief"}}" />
+        </div>
+    </div>
+</section>

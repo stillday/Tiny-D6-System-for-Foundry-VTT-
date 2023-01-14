@@ -1,0 +1,42 @@
+<section class="weapons">
+  <h2 class="headline">{{localize "tinyd6.weapon.headline"}}</h2>
+  {{#each data.system.weapons as |weapon id|}}
+    <div class="equipped-weapon">
+        <div class="d-flex">
+            <h3 class="weapon-name">{{weapon.name}}</h3>
+            <label class="light ml-auto">
+                <input type="checkbox" disabled{{#if (eq weapon.system.damageType "light")}} checked{{/if}}/>
+                {{localize "tinyd6.weapon.lightShort"}}
+            </label>
+            <label class="heavy">
+                <input type="checkbox" disabled{{#if (eq weapon.system.damageType "heavy")}} checked{{/if}}/>
+                {{localize "tinyd6.weapon.heavyShort"}}
+            </label>
+            <label class="ranged">
+                <input type="checkbox" disabled{{#if (eq weapon.system.group "melee")}} checked{{/if}}/>
+                {{localize "tinyd6.weapon.meleeShort"}}
+            </label>
+            <label class="ranged">
+                <input type="checkbox" disabled{{#if (eq weapon.system.group "ranged")}} checked{{/if}}/>
+                {{localize "tinyd6.weapon.rangedShort"}}
+            </label>
+        </div>
+    </div>
+  {{/each}}
+  {{#each data.system.gear as |gearItem id|}}
+    {{#if (eq gearItem.type "weapon")}}
+    <{{#if tagName}}{{tagName}}{{^}}li{{/if}} class="{{classes}} actor-item" data-item-id="{{gearItem._id}}">
+    <div class="d-flex w-100 align-items-center mb-2">
+      <img src="{{gearItem.img}}" title="{{gearItem.name}}" width="50" height="50" class="align-middle mr-2"/>
+      <h4 class="mr-auto weapons-name pr-2">
+          <a class="item-show d-inline-block h-100">{{gearItem.name}}</a>
+      </h4>
+          <a class="item-control item-equip weapons-equip {{#if gearItem.system.equipped}}equipped{{/if}}" data-field="data.equipped" title="{{localize "tinyd6.actor.actions.equipTrait"}}">
+              <span class="fas fa-tshirt"></span>
+          </a>
+      <a class="item-control item-delete weapons-clos" title="{{localize "tinyd6.actor.actions.deleteTrait"}}"><i class="fas fa-times"></i></a>
+    </div>
+    </{{#if tagName}}{{tagName}}{{^}}li{{/if}}>
+    {{/if}}
+{{/each}}
+</section>

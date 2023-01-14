@@ -154,6 +154,7 @@
       "standard": "Normal"
     },
     "weapon": {
+      "headline": "Waffen",
       "name": "Name",
       "type": "Waffenart",
       "damage": "Schaden",
@@ -172,6 +173,7 @@
       "rangedShort": "F"
     },
     "armor": {
+      "headline": "Ausgestattete Gegenstände",
       "name": "Name",
       "type": "Rüstungsart",
       "damageReduction": "SM",

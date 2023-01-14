@@ -1,0 +1,27 @@
+<form class="actor-sheet {{classes}} m-0" autocomplete="off">
+    <div class="row">
+        <div class="col">
+            <img src="systems/tinyd6/assets/images/tiny-d-logo.png" alt="tiny dungeon logo">
+            {{!-- <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" class="character-art img-fluid"/> --}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/character.hbs"}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/traits.hbs"}}
+
+        </div>
+        <div class="col">
+            {{#if owner}}
+                <div class="mb-3">
+                    {{> "systems/tinyd6/templates/tiny-dungeon/partials/roll-bar.hbs" flexClass=""}}
+                </div>
+            {{/if}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/heritage.hbs"}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/experience.hbs"}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/health.hbs"}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/weapons.hbs"}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/equipped-items.hbs"}}
+            {{> "systems/tinyd6/templates/tiny-dungeon/components/inventury.hbs"}}
+        </div>
+    </div>
+    <div class="footer">
+        version 0.1.0
+    </div>
+</form>

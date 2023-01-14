@@ -1,0 +1,49 @@
+    <section class="trauma">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-between headline">
+                    <h2 class="section-header">{{localize "tinyd6.actor.wounds.header"}}</h2>
+                    <span class="d-flex justify-content-end ml-auto align-items-center">
+                        <span class="mr-2">{{localize "tinyd6.actor.wounds.max"}}</span>
+                        {{#if owner}}
+                            <input class="input-headline" name="system.wounds.max" type="text" class="mx-2" style="width: 10%;" value="{{data.system.wounds.max}}" dType="Number"/>
+                        {{^}}
+                            <span>{{data.system.wounds.max}}</span>
+                        {{/if}}
+                    </span>
+                </div>
+                <div class="health-meter">
+                    {{#times data.system.wounds.max}}
+                            <input type="checkbox" value="1" class="health-box d-inline-block"
+                                   {{#if (lt . ../data.system.wounds.value)}}checked{{/if}} />
+                        {{/times}}
+                </div>
+                {{#if owner}}
+                    <p class="help">{{localize "tinyd6.actor.wounds.help"}}</p>
+                {{/if}}
+            </div>
+            {{#if config.enableCorruption}}
+                <div class="col">
+                    <div class="d-flex justify-content-between">
+                        <h2 class="section-header">{{localize "tinyd6.actor.corruption.header"}}</h2>
+                        <span class="d-flex justify-content-end ml-auto">
+                        <span class="mr-2">{{localize "tinyd6.actor.corruption.max"}}</span>
+                            {{#if owner}}
+                                <input name="data.corruptionThreshold.max" type="text" class="mx-2" style="width: 10%;" value="{{data.system.corruptionThreshold.max}}" dType="Number"/>
+                            {{^}}
+                                <span>{{data.system.corruptionThreshold.max}}</span>
+                            {{/if}}
+                    </span>
+                    </div>
+                    <div class="corruption-meter">
+                        {{#times data.system.corruptionThreshold.max}}
+                            <input type="checkbox" value="1" class="corruption-box d-inline-block" {{#if (lt . ../data.system.corruptionThreshold.value)}}checked{{/if}} />
+                        {{/times}}
+                    </div>
+                    {{#if owner}}
+                        <p class="help">{{localize "tinyd6.actor.corruption.help"}}</p>
+                    {{/if}}
+                </div>
+            {{/if}}
+        </div>
+    </section>

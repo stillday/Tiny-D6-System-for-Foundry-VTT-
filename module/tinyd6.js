@@ -51,14 +51,35 @@ export class TinyD6System {
     }
     
     static async _preloadHandlebarsTemplates() {
-        const templatePaths = [
-            "systems/tinyd6/templates/partials/trait-block.hbs",
-            "systems/tinyd6/templates/partials/roll-bar.hbs",
-            "systems/tinyd6/templates/partials/item-header.hbs",
-            "systems/tinyd6/templates/partials/inventory-card.hbs"
-        ];
+        if (game.settings.get(TinyD6System.SYSTEM, "theme") === 'tiny-cthulhu') {
+            const templatePaths = [
+                "systems/tinyd6/templates/partials/trait-block.hbs",
+                "systems/tinyd6/templates/partials/roll-bar.hbs",
+                "systems/tinyd6/templates/partials/item-header.hbs",
+                "systems/tinyd6/templates/partials/inventory-card.hbs"
+            ];
+            return loadTemplates(templatePaths);
+        }
+        
+        if (game.settings.get(TinyD6System.SYSTEM, "theme") === 'tiny-dungeon') {
+            const templatePaths = [
+                "systems/tinyd6/templates/partials/trait-block.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/components/character.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/components/equipped-items.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/components/experience.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/components/health.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/components/heritage.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/components/inventury.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/components/traits.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/components/weapons.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/partials/roll-bar.hbs",
+                "systems/tinyd6/templates/tiny-dungeon/partials/trait-block.hbs",
+                "systems/tinyd6/templates/partials/item-header.hbs",
+                "systems/tinyd6/templates/partials/inventory-card.hbs"
+            ];
+            return loadTemplates(templatePaths);
+        }
     
-        return loadTemplates(templatePaths);
     }
 
     static emit(action, args = {}) {

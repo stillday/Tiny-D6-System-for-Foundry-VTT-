@@ -49,11 +49,12 @@ export default class TinyD6ActorSheet extends ActorSheet {
 
         const rollData = {
             numberOfDice: element.dataset.diceX,
+            initThrow: element.dataset.diceInit,
             defaultThreshold: element.dataset.threshold,
             focusAction: element.dataset.enableFocus,
             marksmanTrait: element.dataset.enableMarksman
         };
-
+        console.log('my Roll', rollData)
         //TinyD6System.emit('dieRoll', rollData);
         Dice.RollTest(rollData);
     }

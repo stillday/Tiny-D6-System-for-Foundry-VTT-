@@ -1,0 +1,25 @@
+<section>
+    <h2 class="headline">{{localize "tinyd6.actor.xp.header"}}</h2>
+    <div class="mb-2">
+        <div class="row">
+            <label class="col" for="xpTotal">
+                {{localize "tinyd6.actor.xp.total"}}
+            </label>
+            <input class="col input-field" id="xpTotal" name="total" type="number" value="{{data.system.xp.max}}" placeholder="{{localize "tinyd6.actor.xp.total"}}" dType="Number" />
+        </div>
+        <div class="row">
+            <label class="col" for="xpSpent">
+                {{localize "tinyd6.actor.xp.spent"}}
+            </label>
+            <input class="col input-field" id="xpSpent" name="spent" type="number" value="{{data.system.xp.spent}}" placeholder="{{localize "tinyd6.actor.xp.spent"}}" dType="Number" />
+        </div>
+        <div class="row">
+            <label class="col" for="xpRemain">
+                {{localize "tinyd6.actor.xp.remaining"}}
+            </label>
+            <div class="col">
+                {{data.system.xp.remaining}}
+            </div>
+        </div>
+    </div>
+</section>
