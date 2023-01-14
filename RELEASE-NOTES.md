@@ -1,4 +1,14 @@
 # Release Notes
+
+## v0.6.0
+- include tiny dungeon sheet, version 0.1.0
+
+## v0.5.0
+- Update npm-dependencies & gulpfile.js by @rpgRackNar in #1
+- German language support by @rpgRackNar in #2
+- Add release-build by @rpgRackNar in #3
+- include or function to fix problem by @stillday in #4
+- Create Update to Version 10 by @stillday in #10
     
 ## v0.1.0-beta2
 
