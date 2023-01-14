@@ -1,7 +1,10 @@
 # Tiny D6 for Foundry VTT
 
 **VERSION:** 0.5.0-beta
-[![Make releases](https://github.com/stillday/Tiny-D6-System-for-Foundry-VTT-/actions/workflows/release.yml/badge.svg?branch=main&event=release)](https://github.com/stillday/Tiny-D6-System-for-Foundry-VTT-/actions/workflows/release.yml)
+
+![GitHub all releases](https://img.shields.io/github/downloads/stillday/Tiny-D6-System-for-Foundry-VTT-/total?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/stillday/Tiny-D6-System-for-Foundry-VTT-?style=for-the-badge)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/stillday/Tiny-D6-System-for-Foundry-VTT-?style=for-the-badge)
 
 This system for Foundry Virtual Tabletop facilitates playing using the Tiny D6 minimalist RPG system. The system is currently in beta so breaking changes may happen on occasion.
 
@@ -23,7 +26,10 @@ The system should now show up in your foundry and can be used to create a new wo
 
 ## Feedback
 
-Constructive feedback is welcome! To send feedback you can visit the FoundryVTT discord and @architech99 for any feedback. Additionally, you may submit an issue here on GitLab.
+Constructive feedback is welcome! You can send feedback at any time, either via an Isso message or directly via Discord.
+Write either crash#7509 or RackNar#7343
+
+Additionally, you may submit an issue here on Github.
 
 ## Contributing
 
