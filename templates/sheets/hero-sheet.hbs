@@ -101,11 +101,11 @@
                         <h3 class="section-header">{{localize "tinyd6.actor.xp.header"}}</h3>
                         <div class="stat-values property d-flex justify-content-between border-bottom">
                             <label class="mr-2"><span>{{localize "tinyd6.actor.xp.total"}}</span></label>
-                            <input name="data.xp.max" class="text-right" type="text" value="{{data.system.xp.max}}" placeholder="{{localize "tinyd6.actor.xp.total"}}" dType="Number"/>
+                            <input name="system.xp.max" class="text-right" type="text" value="{{data.system.xp.max}}" placeholder="{{localize "tinyd6.actor.xp.total"}}" dType="Number"/>
                         </div>
                         <div class="stat-values property d-flex justify-content-between border-bottom">
                             <label class="mr-2"><span>{{localize "tinyd6.actor.xp.spent"}}</span></label>
-                            <input name="data.xp.spent" class="text-right" type="text" value="{{data.system.xp.spent}}" placeholder="{{localize "tinyd6.actor.xp.spent"}}" dType="Number"/>
+                            <input name="system.xp.spent" class="text-right" type="text" value="{{data.system.xp.spent}}" placeholder="{{localize "tinyd6.actor.xp.spent"}}" dType="Number"/>
                         </div>
                         <div class="stat-values property d-flex justify-content-between border-bottom">
                             <label class="mr-2"><span>{{localize "tinyd6.actor.xp.remaining"}}</span></label>
@@ -136,25 +136,25 @@
         <div class="d-flex justify-content-start">
             <div class="light mr-4">
                 <label>
-                    <input type="checkbox" name="data.proficiencies.lightMelee" {{checked data.system.proficiencies.lightMelee}}/>
+                    <input type="checkbox" name="system.proficiencies.lightMelee" {{checked data.system.proficiencies.lightMelee}}/>
                     {{localize "tinyd6.weapon.lightMelee"}}
                 </label>
             </div>
             <div class="heavy mr-4">
                 <label>
-                    <input type="checkbox" name="data.proficiencies.heavyMelee" {{checked data.system.proficiencies.heavyMelee}}/>
+                    <input type="checkbox" name="system.proficiencies.heavyMelee" {{checked data.system.proficiencies.heavyMelee}}/>
                     {{localize "tinyd6.weapon.heavyMelee"}}
                 </label>
             </div>
             <div class="ranged mr-4">
                 <label>
-                    <input type="checkbox" name="data.proficiencies.lightRanged" {{checked data.system.proficiencies.lightRanged}}/>
+                    <input type="checkbox" name="system.proficiencies.lightRanged" {{checked data.system.proficiencies.lightRanged}}/>
                     {{localize "tinyd6.weapon.lightRanged"}}
                 </label>
             </div>
             <div class="ranged mr-4">
                 <label>
-                    <input type="checkbox" name="data.proficiencies.heavyRanged" {{checked data.system.proficiencies.heavyRanged}}/>
+                    <input type="checkbox" name="system.proficiencies.heavyRanged" {{checked data.system.proficiencies.heavyRanged}}/>
                     {{localize "tinyd6.weapon.heavyRanged"}}
                 </label>
             </div>
