@@ -1,5 +1,8 @@
 # Release Notes
 
+## v0.6.1
+- hotfix for weapon select and xp
+- include thirt bracket for strings
 ## v0.6.0
 - include tiny dungeon sheet, version 0.1.0
 

@@ -1,6 +1,6 @@
 # Tiny D6 for Foundry VTT
 
-**VERSION:** 0.6.0-beta
+**VERSION:** 0.6.1-beta
 
 ![GitHub all releases](https://img.shields.io/github/downloads/stillday/Tiny-D6-System-for-Foundry-VTT-/total?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/stillday/Tiny-D6-System-for-Foundry-VTT-?style=for-the-badge)
